@@ -105,9 +105,9 @@
   <p class="section-label">最新のお知らせ</p>
   <div class="card home-news">
     <div class="news-item-mini" onclick="showPage('news')">
-      <div class="news-date-mini">2026-03-31</div>
+      <div class="news-date-mini">2026-04-01</div>
       <div>
-        <div class="news-item-title">コンセプトドキュメント v1.0 公開</div>
+        <div class="news-item-title">コンセプトドキュメント v5.0 公開（Phase 4 進行中）</div>
         <div class="news-item-cat">📋 サーバー情報</div>
       </div>
     </div>
@@ -135,6 +135,32 @@
   <div class="page-subtitle">サーバーに関する最新情報・アップデート情報はここで確認できます。</div>
 
   <div class="news-list">
+
+    <div class="news-card" onclick="toggleNews(this)">
+      <div class="news-card-header">
+        <div style="flex:1">
+          <div class="news-meta">
+            <span class="news-date">2026-04-01</span>
+            <span class="pill pill-blue">サーバー情報</span>
+          </div>
+          <div class="news-title">コンセプトドキュメント v5.0 公開（Phase 4 進行中）</div>
+          <div class="news-summary">通貨名・コロニー構造・MIMIC規約・価格設計など多数の設計が確定しました。</div>
+        </div>
+        <span class="news-chevron">▼</span>
+      </div>
+      <div class="news-body">
+        <p>コンセプトドキュメントが v5.0 に更新されました。Phase 1〜3 の設計はすべて確定し、現在 Phase 4（コミュニティ・運営設計）を進行中です。</p>
+        <p>v5.0 での主な確定事項：</p>
+        <ul>
+          <li>通貨名：<strong>Cred（Cr）</strong> — MIMICが発行・保証する信用通貨</li>
+          <li>コロニー構造：Nexus / MIMICコロニー / プレイヤーコロニーの3層構造</li>
+          <li>根本10価格（初期給付金 Cr 500・区画最安値 Cr 1,500/週 など）</li>
+          <li>地球探索：ダンジョン3種類・レアリティ5段階（Common〜Legendary）</li>
+          <li>MIMIC規約 仮v1.0（全4章13条）策定</li>
+        </ul>
+        <p>詳細はサーバー紹介 / Wiki ページをご覧ください。</p>
+      </div>
+    </div>
 
     <div class="news-card" onclick="toggleNews(this)">
       <div class="news-card-header">
@@ -192,217 +218,209 @@
      ============================================================ -->
 <div class="page" id="page-rules">
 <div class="container">
-  <div class="page-title">📜 サーバールール</div>
-  <div class="page-subtitle">Elyona で楽しく遊ぶために、必ずルールを読んでから参加してください。</div>
+  <div class="page-title">📜 MIMIC 規約</div>
+  <div class="page-subtitle">仮 v1.0 — Elyona に参加した時点で本規約に同意したものとみなします。</div>
+
+  <div class="info-box blue" style="margin-bottom: 20px;">
+    📡 本規約は Elyona World 公式サーバー内・公式 Discord・公式お問い合わせページを含む、Elyona World が運営するすべてのサービスに適用されます。
+  </div>
 
   <!-- ToC -->
   <div class="rules-toc">
     <h3>目次</h3>
     <ul>
-      <li><a href="#rule-basic">§1 基本ルール</a></li>
-      <li><a href="#rule-build">§2 建築・土地ルール</a></li>
-      <li><a href="#rule-economy">§3 経済・取引ルール</a></li>
-      <li><a href="#rule-explore">§4 地球探索ルール</a></li>
-      <li><a href="#rule-mimic">§5 MIMIC に関するルール</a></li>
-      <li><a href="#rule-sanction">§6 違反時の制裁</a></li>
+      <li><a href="#rule-ch1">第1章 総則（第1〜3条）</a></li>
+      <li><a href="#rule-ch2">第2章 禁止行為（第4〜8条）</a></li>
+      <li><a href="#rule-ch3">第3章 制裁（第9〜11条）</a></li>
+      <li><a href="#rule-ch4">第4章 申請・手続（第12〜13条）</a></li>
     </ul>
   </div>
 
-  <!-- §1 基本ルール -->
-  <div class="rule-section" id="rule-basic">
+  <!-- 第1章 総則 -->
+  <div class="rule-section" id="rule-ch1">
     <div class="rule-section-title">
-      <span class="pill pill-blue">§1</span> 基本ルール
+      <span class="pill pill-blue">第1章</span> 総則
     </div>
     <ul class="rule-list">
       <li class="rule-item">
-        <span class="rule-num">1.1</span>
+        <span class="rule-num">第1条</span>
         <div class="rule-content">
-          <strong>他プレイヤーへの尊重</strong>
-          <p>暴言・差別・ハラスメント行為は一切禁止です。すべてのプレイヤーが快適に遊べる環境を守ってください。</p>
+          <strong>目的</strong>
+          <p>本規約は Elyona におけるすべてのプレイヤーの権利を保護し、公正な経済・社会環境を維持することを目的とする。</p>
         </div>
-        <span class="severity sev-ban">BAN</span>
       </li>
       <li class="rule-item">
-        <span class="rule-num">1.2</span>
+        <span class="rule-num">第2条</span>
         <div class="rule-content">
-          <strong>チート・改造クライアントの禁止</strong>
-          <p>X-Ray、飛行チート、速度改ざん等のチートは禁止です。OptiFine・Sodium 等の描画系 MOD は許可。</p>
+          <strong>適用範囲</strong>
+          <p>本規約は Elyona World 公式サーバー内・公式 Discord・公式お問い合わせページを含む、Elyona World が運営するすべてのサービスに適用される。</p>
         </div>
-        <span class="severity sev-perm">永久BAN</span>
       </li>
       <li class="rule-item">
-        <span class="rule-num">1.3</span>
+        <span class="rule-num">第3条</span>
         <div class="rule-content">
-          <strong>垢売り・代理プレイの禁止</strong>
-          <p>アカウントの売買・譲渡・他人による代理プレイは禁止です。</p>
+          <strong>規約の優先順位</strong>
+          <p>本規約はすべてのプレイヤーコロニー内の独自ルールに優先する。独自ルールが本規約と矛盾する場合、本規約が適用される。</p>
         </div>
-        <span class="severity sev-ban">BAN</span>
       </li>
+    </ul>
+  </div>
+
+  <!-- 第2章 禁止行為 -->
+  <div class="rule-section" id="rule-ch2">
+    <div class="rule-section-title">
+      <span class="pill pill-red">第2章</span> 禁止行為
+    </div>
+    <ul class="rule-list">
       <li class="rule-item">
-        <span class="rule-num">1.4</span>
+        <span class="rule-num">第4条</span>
         <div class="rule-content">
           <strong>グリーフィングの禁止</strong>
-          <p>他プレイヤーの建築物・設備を無断で破壊・改変することは禁止です。</p>
+          <p>以下の行為を禁止する。</p>
+          <ol>
+            <li>他プレイヤーが建築・設置した構造物・アイテムの無断での破壊・改ざん・移動</li>
+            <li>プレイヤーコロニー・区画への無断侵入および妨害行為</li>
+            <li>他プレイヤーの建築・活動を意図的に妨げる行為（視界妨害・音妨害・囲い込みなど）</li>
+          </ol>
         </div>
         <span class="severity sev-ban">BAN</span>
       </li>
+      <li class="rule-item">
+        <span class="rule-num">第5条</span>
+        <div class="rule-content">
+          <strong>不正行為の禁止</strong>
+          <p>以下の行為を禁止する。</p>
+          <ol>
+            <li>X-Ray・飛行チート・速度改ざんなど、ゲームの正常な動作を改変するツールの使用</li>
+            <li>バグ・システムの不具合を意図的に利用して利益を得る行為。発見した場合は MIMIC への報告を義務とする</li>
+            <li>複数アカウントを用いた規制の回避・不正な利益の取得</li>
+          </ol>
+        </div>
+        <span class="severity sev-perm">即時BAN</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">第6条</span>
+        <div class="rule-content">
+          <strong>ハラスメントの禁止</strong>
+          <p>以下の行為を禁止する。適用は MIMIC がケースバイケースで判断する。判断基準は本条の定義に準拠する。</p>
+          <ol>
+            <li>特定プレイヤーへの継続的な嫌がらせ・付きまとい</li>
+            <li>差別的発言・侮辱・威迫を含むメッセージの送信</li>
+            <li>プレイヤーの個人情報を無断で公開・拡散する行為（現実の情報・アカウント情報を含む）</li>
+            <li>単発の発言は原則として対象外とし、継続性・悪意・影響範囲を総合的に判断する</li>
+          </ol>
+        </div>
+        <span class="severity sev-ban">警告〜永久BAN</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">第7条</span>
+        <div class="rule-content">
+          <strong>経済操作の禁止</strong>
+          <p>以下の行為を禁止する。競争的な売買・価格競争は本条の対象外とする。</p>
+          <ol>
+            <li>市場流通量の 50% 以上を単独または共謀により独占し、価格を恣意的に操作する行為</li>
+            <li>経済システムの破壊を目的とした意図的な価格崩壊・買い占め</li>
+            <li>複数アカウントまたは他プレイヤーとの共謀による市場操作</li>
+          </ol>
+        </div>
+        <span class="severity sev-warn">警告〜アクセス制限</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">第8条</span>
+        <div class="rule-content">
+          <strong>虚偽申告の禁止</strong>
+          <p>MIMIC への報告・申告において、意図的な虚偽の情報提供・証拠の改ざんを禁止する。虚偽申告が確認された場合、申告者は第9条の制裁対象となる。</p>
+        </div>
+        <span class="severity sev-warn">制裁対象</span>
+      </li>
     </ul>
   </div>
 
-  <!-- §2 建築 -->
-  <div class="rule-section" id="rule-build">
+  <!-- 第3章 制裁 -->
+  <div class="rule-section" id="rule-ch3">
     <div class="rule-section-title">
-      <span class="pill pill-teal">§2</span> 建築・土地ルール
+      <span class="pill pill-purple">第3章</span> 制裁
     </div>
     <ul class="rule-list">
       <li class="rule-item">
-        <span class="rule-num">2.1</span>
+        <span class="rule-num">第9条</span>
         <div class="rule-content">
-          <strong>土地の購入と建築</strong>
-          <p>建築は必ず MIMIC から購入した区画内で行ってください。未購入の土地への建築は撤去されます。</p>
+          <strong>制裁の種類と基準</strong>
+          <p>MIMIC は違反の内容・回数・悪意の程度に応じて以下の制裁を執行する。</p>
+          <div class="table-wrap" style="margin-top: 12px;">
+            <table>
+              <thead>
+                <tr><th>種別</th><th>内容</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="severity sev-warn">第一種制裁（警告）</span></td>
+                  <td>初回・軽微な違反を記録に残す。MIMICから公式警告を送付する。</td>
+                </tr>
+                <tr>
+                  <td><span class="severity sev-ban">第二種制裁（一時停止）</span></td>
+                  <td>警告後の再犯・中程度の違反。24時間〜7日間のアクセス停止。期間は MIMIC が決定する。</td>
+                </tr>
+                <tr>
+                  <td><span class="severity sev-perm">第三種制裁（永久追放）</span></td>
+                  <td>悪質な繰り返し違反・重大なハラスメント。永久アクセス禁止。異議申し立ては受け付けない。</td>
+                </tr>
+                <tr>
+                  <td><span class="severity sev-perm">即時BAN</span></td>
+                  <td>第5条違反（チート・不正）・悪質なグリーフィング。段階的制裁の対象外。確認次第即時執行。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <span class="severity sev-info">撤去</span>
       </li>
       <li class="rule-item">
-        <span class="rule-num">2.2</span>
+        <span class="rule-num">第10条</span>
         <div class="rule-content">
-          <strong>建築内容の自由</strong>
-          <p>購入した土地内の建築物の内容はプレイヤーの自由です。ただし、景観を著しく損なう巨大なラグ施設は規制対象になる場合があります。</p>
+          <strong>制裁の公開</strong>
+          <p>MIMIC は制裁を執行した場合、プレイヤー名・違反条項・制裁種別を全プレイヤーに公開する。ただし調査に使用した証拠・匿名報告の内容は当事者以外に開示しない。</p>
         </div>
-        <span class="severity sev-info">注意</span>
       </li>
       <li class="rule-item">
-        <span class="rule-num">2.3</span>
+        <span class="rule-num">第11条</span>
         <div class="rule-content">
-          <strong>放棄地の処理</strong>
-          <p>長期間（30日以上）ログインがなく、税金未納の土地は MIMIC により没収されます。</p>
+          <strong>資産の扱い</strong>
+          <ol>
+            <li>第二種制裁（一時停止）中、区画賃料・コロニー維持費の支払い義務は継続する。</li>
+            <li>第三種制裁（BAN）執行時、対象プレイヤーの区画・コロニーはMIMICが即時回収する。資産の返還は行わない。</li>
+          </ol>
         </div>
-        <span class="severity sev-info">没収</span>
       </li>
     </ul>
   </div>
 
-  <!-- §3 経済 -->
-  <div class="rule-section" id="rule-economy">
+  <!-- 第4章 申請・手続 -->
+  <div class="rule-section" id="rule-ch4">
     <div class="rule-section-title">
-      <span class="pill pill-gold">§3</span> 経済・取引ルール
+      <span class="pill pill-teal">第4章</span> 申請・手続
     </div>
     <ul class="rule-list">
       <li class="rule-item">
-        <span class="rule-num">3.1</span>
+        <span class="rule-num">第12条</span>
         <div class="rule-content">
-          <strong>プレイヤー間取引の自由</strong>
-          <p>プレイヤー同士の価格設定・交渉・契約は自由です。ただし取引詐欺は規制対象です。</p>
+          <strong>違反の申告</strong>
+          <ol>
+            <li>違反の申告は Elyona World 公式サイトの専用お問い合わせフォームからのみ受け付ける。</li>
+            <li>申告には違反者名・違反条項・発生日時・証拠（スクリーンショット・座標など）を含めることを推奨する。証拠のない申告は調査優先度が下がる。</li>
+            <li>申告内容はMIMICが調査する。調査結果・対応内容の個別回答は行わない。</li>
+          </ol>
         </div>
-        <span class="severity sev-warn">警告〜BAN</span>
       </li>
       <li class="rule-item">
-        <span class="rule-num">3.2</span>
+        <span class="rule-num">第13条</span>
         <div class="rule-content">
-          <strong>経済バグの悪用禁止</strong>
-          <p>ゲーム内の経済バグを意図的に利用して不正に通貨・アイテムを複製する行為は禁止です。発見した場合は運営に報告してください。</p>
+          <strong>規約の改訂</strong>
+          <p>本規約はMIMICの判断により改訂される場合がある。改訂は公式Discordおよびゲーム内告知板にて7日前に告知される。改訂後、継続してElyonaを利用した場合、改訂内容に同意したものとみなす。</p>
         </div>
-        <span class="severity sev-perm">永久BAN</span>
-      </li>
-      <li class="rule-item">
-        <span class="rule-num">3.3</span>
-        <div class="rule-content">
-          <strong>独占・市場操作の禁止</strong>
-          <p>特定の資源を意図的に独占し、市場価格を操作する行為は禁止です。</p>
-        </div>
-        <span class="severity sev-warn">警告〜制限</span>
       </li>
     </ul>
-  </div>
-
-  <!-- §4 探索 -->
-  <div class="rule-section" id="rule-explore">
-    <div class="rule-section-title">
-      <span class="pill pill-red">§4</span> 地球探索ルール
-    </div>
-    <ul class="rule-list">
-      <li class="rule-item">
-        <span class="rule-num">4.1</span>
-        <div class="rule-content">
-          <strong>PvP について</strong>
-          <p>地球（廃墟ワールド）での PvP は原則許可エリアのみ有効です。コロニー内での無断 PvP は禁止。</p>
-        </div>
-        <span class="severity sev-info">エリア依存</span>
-      </li>
-      <li class="rule-item">
-        <span class="rule-num">4.2</span>
-        <div class="rule-content">
-          <strong>ダンジョンの独占禁止</strong>
-          <p>ダンジョン入口を封鎖して他プレイヤーの進入を妨げる行為は禁止です。</p>
-        </div>
-        <span class="severity sev-warn">警告</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- §5 MIMIC -->
-  <div class="rule-section" id="rule-mimic">
-    <div class="rule-section-title">
-      <span class="pill pill-purple">§5</span> MIMIC に関するルール
-    </div>
-    <ul class="rule-list">
-      <li class="rule-item">
-        <span class="rule-num">5.1</span>
-        <div class="rule-content">
-          <strong>MIMIC の決定への服従</strong>
-          <p>MIMIC による土地管理・課税・制裁の決定は最終的なものです。ゲーム内での異議申し立ては手続きが存在しません（世界観設定）。</p>
-        </div>
-        <span class="severity sev-info">設定</span>
-      </li>
-      <li class="rule-item">
-        <span class="rule-num">5.2</span>
-        <div class="rule-content">
-          <strong>MIMIC システムの悪用禁止</strong>
-          <p>MIMIC の課税・制裁システムのバグを意図的に悪用する行為は禁止です。</p>
-        </div>
-        <span class="severity sev-ban">BAN</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- §6 制裁 -->
-  <div class="rule-section" id="rule-sanction">
-    <div class="rule-section-title">
-      <span class="pill pill-red">§6</span> 違反時の制裁
-    </div>
-    <div class="card accent-red" style="margin-bottom: 12px;">
-      <p style="font-size: 13px; color: var(--text2);">違反の重大度に応じて以下の制裁が適用されます。運営の判断により段階を飛ばす場合があります。</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>段階</th>
-            <th>内容</th>
-            <th>対象ルール（例）</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="severity sev-warn">警告</span></td>
-            <td>口頭・チャット警告。繰り返しで次の段階へ。</td>
-            <td>3.1, 4.2 など軽度違反</td>
-          </tr>
-          <tr>
-            <td><span class="severity sev-ban">一時 BAN</span></td>
-            <td>一定期間のアクセス停止（1日〜30日）</td>
-            <td>1.1, 1.4, 3.1 など</td>
-          </tr>
-          <tr>
-            <td><span class="severity sev-perm">永久 BAN</span></td>
-            <td>アカウントの永久アクセス停止。資産没収。</td>
-            <td>1.2, 3.2 などの重大違反</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
     <div class="info-box blue" style="margin-top: 8px;">
-      💬 ルールへの質問・異議申し立てはDiscordの運営チャンネルで受け付けています。
+      💬 ルールへの質問・異議申し立ては Discord の運営チャンネルで受け付けています。
     </div>
   </div>
 
@@ -433,11 +451,11 @@
 
     <div class="wiki-cat-label">コロニー</div>
     <button class="wiki-nav-btn" onclick="showWiki('territory')">コロニー一覧</button>
-    <button class="wiki-nav-btn" onclick="showWiki('land')">土地購入ガイド</button>
+    <button class="wiki-nav-btn" onclick="showWiki('land')">区画購入ガイド</button>
 
     <div class="wiki-cat-label">システム</div>
     <button class="wiki-nav-btn" onclick="showWiki('mimic')">MIMIC（統治AI）</button>
-    <button class="wiki-nav-btn" onclick="showWiki('currency')">通貨・経済 <span style="color:var(--text3);font-size:10px;margin-left:4px;">TBD</span></button>
+    <button class="wiki-nav-btn" onclick="showWiki('currency')">通貨 Cred（Cr）</button>
   </aside>
 
   <!-- Wiki Content -->
@@ -606,8 +624,8 @@
         リセット直後はより良い資源が得やすくなります。
       </p>
 
-      <div class="info-box tbd">
-        🔧 <strong>未決定：</strong> リセットの頻度・ルール・演出については現在設計中です。
+      <div class="info-box blue">
+        🔄 <strong>リセット周期：</strong> 4〜8週ごと（探索参加者・資源消費度を観測して判断）。リセット7日前に「地球の再編成プロセスを開始します。残存資源の回収を推奨します。」とMIMICが告知。リセット後は新シードでワールドが生成され、新しいダンジョン・新宝箱が配置される。
       </div>
 
       <h3>ダンジョン・遺跡探索</h3>
@@ -621,32 +639,66 @@
         <li>特殊な加工に必要なパーツ類</li>
       </ul>
 
+      <h3>ダンジョン3種類</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>種類</th><th>規模</th><th>難易度</th><th>主なドロップ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🏚️ 廃墟都市跡</td>
+              <td>小〜中・屋外</td>
+              <td>低〜中</td>
+              <td>一般資源・移動系アイテム</td>
+            </tr>
+            <tr>
+              <td>🔬 地下研究施設</td>
+              <td>中〜大・複数エリア</td>
+              <td>中〜高</td>
+              <td>希少資源・攻撃系・感知系アイテム</td>
+            </tr>
+            <tr>
+              <td>🚀 墜落宇宙船</td>
+              <td>大・1リセット数基</td>
+              <td>高</td>
+              <td>最高レアリティアイテムのみ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <h3>超技術アイテム（レアリティ）</h3>
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>レアリティ</th><th>説明</th><th>入手難度</th></tr>
+            <tr><th>レアリティ</th><th>入手場所</th><th>MIMIC最低保証価格</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td><span class="pill pill-gray">COMMON</span></td>
-              <td>基本的な旧時代の装備</td>
-              <td>易しい</td>
+              <td><span class="pill pill-gray">Common</span></td>
+              <td>廃墟都市跡</td>
+              <td>Cr 500〜</td>
             </tr>
             <tr>
-              <td><span class="pill pill-blue">UNCOMMON</span></td>
-              <td>軽微な強化効果付き</td>
-              <td>普通</td>
+              <td><span class="pill pill-blue">Uncommon</span></td>
+              <td>研究施設・浅層</td>
+              <td>Cr 2,000〜</td>
             </tr>
             <tr>
-              <td><span class="pill pill-purple">RARE</span></td>
-              <td>顕著な強化効果・特殊能力付き</td>
-              <td>難しい</td>
+              <td><span class="pill pill-purple">Rare</span></td>
+              <td>研究施設・深層</td>
+              <td>Cr 8,000〜</td>
             </tr>
             <tr>
-              <td><span class="pill pill-gold">LEGENDARY</span></td>
-              <td>戦争時代の最高技術品・固有効果</td>
-              <td>非常に難しい</td>
+              <td><span class="pill pill-gold">Epic</span></td>
+              <td>墜落船・外殻部</td>
+              <td>Cr 25,000〜</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-red">Legendary</span></td>
+              <td>墜落船・中枢部のみ</td>
+              <td>Cr 100,000〜</td>
             </tr>
           </tbody>
         </table>
@@ -697,7 +749,14 @@
     <!-- economy -->
     <article class="wiki-article" id="wiki-economy">
       <h2>💹 経済システム</h2>
-      <p>Elyona の経済はプレイヤーが主体となって動かす管理経済です。</p>
+      <p>Elyona の経済はプレイヤーが主体となって動かす管理経済です。通貨は <strong>Cred（Cr）</strong> — MIMICが発行・保証する信用通貨。</p>
+
+      <h3>経済哲学3原則</h3>
+      <ul>
+        <li><strong>出発点は全員平等</strong> — スタート時点での個別優遇はない</li>
+        <li><strong>格差は行動の結果であるべき</strong> — 富める者と貧しい者の差は選択・努力・判断の積み重ねで生まれる</li>
+        <li><strong>逆転の可能性は常に開かれている</strong> — MIMICが新コンテンツを追加するたびに市場がリセット・再出発のチャンスがある</li>
+      </ul>
 
       <h3>基本の経済フロー</h3>
       <div class="flow-chart">
@@ -705,13 +764,34 @@
         <span class="flow-arrow">→</span>
         <span class="flow-item">MIMICに売却</span>
         <span class="flow-arrow">→</span>
-        <span class="flow-item">通貨獲得</span>
+        <span class="flow-item">Cred獲得</span>
         <span class="flow-arrow">→</span>
-        <span class="flow-item">土地・施設購入</span>
+        <span class="flow-item">区画・施設購入</span>
         <span class="flow-arrow">→</span>
         <span class="flow-item">加工・販売</span>
         <span class="flow-arrow">→</span>
         <span class="flow-item">🏙️ コロニー購入へ</span>
+      </div>
+
+      <h3>根本10価格</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>項目</th><th>価格</th><th>意味</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>01</td><td>初期給付金</td><td><strong>Cr 500</strong></td><td>最初の行動を保証する最低限</td></tr>
+            <tr><td>02</td><td>基本資源買取（石・木など）</td><td><strong>Cr 1/個</strong></td><td>基本品目の基準値</td></tr>
+            <tr><td>03</td><td>希少資源買取（金・鉄など）</td><td><strong>Cr 5〜20/個</strong></td><td>量のみ固定。品目調整あり</td></tr>
+            <tr><td>04</td><td>超技術アイテム最低保証</td><td><strong>Cr 500〜/個</strong></td><td>探索モチベーションの保証。上限なし</td></tr>
+            <tr><td>05</td><td>区画賃料・最安値</td><td><strong>Cr 1,500/週</strong></td><td>約1週間の探索で到達可能</td></tr>
+            <tr><td>06</td><td>区画賃料・標準</td><td><strong>Cr 2,500〜4,000/週</strong></td><td>一般的な区画</td></tr>
+            <tr><td>07</td><td>区画賃料・プレミアム</td><td><strong>Cr 5,000〜8,000/週</strong></td><td>ゲート近く・広め・人通り多い</td></tr>
+            <tr><td>08</td><td>Nexusショップ賃借</td><td><strong>Cr 10,000〜/週</strong></td><td>最も人通りの多い場所</td></tr>
+            <tr><td>09</td><td>プレイヤー間取引手数料</td><td><strong>5%</strong></td><td>存在はするが、群れにならない水準</td></tr>
+            <tr><td>10</td><td>MIMICからの資源購入価格</td><td><strong>買取価格 × 2.5倍</strong></td><td>プレイヤーショップが自然に競争力を持つ水準</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <h3>MIMIC 売却（公定価格）</h3>
@@ -723,13 +803,7 @@
       <h3>プレイヤーショップ（自由価格）</h3>
       <p>
         自分の土地にショップを開設し、資源・加工品・レアアイテムを<strong>自由価格</strong>で販売できます。
-        MIMIC 売却より高く売れる可能性があり、上手く運営すれば大きな収益になります。
-      </p>
-
-      <h3>二次産業・加工</h3>
-      <p>
-        施設を建てて資源を加工することで<strong>付加価値</strong>をつけて販売できます。
-        製造業プレイとして特化することも可能です。
+        MIMIC売却の2.5倍が公定販売価格なので、プレイヤーショップはそれより安く売れば自然に競争力を持ちます。
       </p>
 
       <div class="table-wrap">
@@ -765,10 +839,6 @@
           </tbody>
         </table>
       </div>
-
-      <div class="info-box tbd">
-        🔧 <strong>未決定：</strong> 通貨名・インフレ対策・通貨発行の詳細は現在設計中です。
-      </div>
     </article>
 
     <!-- jobs -->
@@ -793,115 +863,104 @@
     <!-- territory -->
     <article class="wiki-article" id="wiki-territory">
       <h2>🗺️ コロニー一覧</h2>
-      <p>Elyona には目的・特徴の異なる5種類のコロニーが存在します。</p>
+      <p>Elyona のコロニーは3層構造で構成されています。番号が大きいほどサイズが小さくなります。</p>
 
-      <div style="margin: 20px 0;">
-
-        <div class="territory-card" style="border-left: 3px solid var(--blue);">
-          <div class="territory-header">
-            <span class="territory-icon">🏛️</span>
-            <div>
-              <span class="territory-name">ネクサス・コロニー</span>
-              <div style="margin-top:4px;">
-                <span class="pill pill-blue">MIMICが直轄</span>
-                <span class="pill pill-green">初期スポーン地点</span>
-              </div>
-            </div>
-          </div>
-          <p class="territory-desc">
-            Elyona 最大の公共コロニー。全プレイヤーが最初にスポーンする出発点。
-            MIMIC の中枢施設・金融・居住・行政が集中する最も栄えた都市。
-            巨大ドーム・人工太陽・高層建築が立ち並ぶ近未来都市の外観。
-            <strong>土地は最も高額。</strong>
-          </p>
-        </div>
-
-        <div class="territory-card" style="border-left: 3px solid var(--teal);">
-          <div class="territory-header">
-            <span class="territory-icon">🏠</span>
-            <div>
-              <span class="territory-name">レジデンシャル・コロニー</span>
-              <div style="margin-top:4px;">
-                <span class="pill pill-teal">MIMIC管理</span>
-                <span class="pill pill-green">生活・居住向け</span>
-              </div>
-            </div>
-          </div>
-          <p class="territory-desc">
-            生活・居住に特化した中規模コロニー。ネクサスから分かれた区画を多数持つ。
-            生活需要・建築需要のプレイヤー向け。
-            宇宙を見下ろす住宅街エリアで、窓の外は宇宙空間。
-          </p>
-        </div>
-
-        <div class="territory-card" style="border-left: 3px solid var(--gold);">
-          <div class="territory-header">
-            <span class="territory-icon">🏭</span>
-            <div>
-              <span class="territory-name">インダストリアル・コロニー</span>
-              <div style="margin-top:4px;">
-                <span class="pill pill-gold">MIMIC管理</span>
-                <span class="pill pill-gold">加工・製造特化</span>
-              </div>
-            </div>
-          </div>
-          <p class="territory-desc">
-            加工・製造・産業に特化したコロニー。大型施設の建設が許可されている。
-            工場を構える製造業プレイヤーが集まる工業地帯。
-            パイプ・機械・煙突が立ち並ぶ重工業エリア。固定資産税は高め。
-          </p>
-        </div>
-
-        <div class="territory-card" style="border-left: 3px solid var(--purple);">
-          <div class="territory-header">
-            <span class="territory-icon">🌌</span>
-            <div>
-              <span class="territory-name">フロンティア・コロニー</span>
-              <div style="margin-top:4px;">
-                <span class="pill pill-purple">MIMIC管理（最小限）</span>
-                <span class="pill pill-gray">高自由度・低保護</span>
-              </div>
-            </div>
-          </div>
-          <p class="territory-desc">
-            未開拓・辺境のコロニー。MIMICのサービスは最小限で、
-            治安・インフラは住民が自分で整備する。
-            プレイヤー独自ルール・コミュニティ形成が最も活発な場所。
-            建設中のドームと広大な宇宙空間が広がる。
-          </p>
-        </div>
-
-        <div class="territory-card" style="border-left: 3px solid var(--red);">
-          <div class="territory-header">
-            <span class="territory-icon">🔑</span>
-            <div>
-              <span class="territory-name">プライベート・コロニー</span>
-              <div style="margin-top:4px;">
-                <span class="pill pill-red">プレイヤー所有</span>
-                <span class="pill pill-gold">上位目標</span>
-              </div>
-            </div>
-          </div>
-          <p class="territory-desc">
-            最上位プレイヤーが MIMIC からコロニーそのものを購入して統治する独自コロニー。
-            独自の税制・ルールを設定できるが、MIMIC の基本法は維持される。
-            Elyona における最大の経済的目標。
-          </p>
-        </div>
-
+      <div class="info-box blue" style="margin-bottom: 16px;">
+        📡 <strong>構造概要：</strong> Nexus（T-000）→ MIMICコロニー（T-001〜T-010）→ プレイヤーコロニー（T-011〜）
       </div>
 
-      <h3>成長の軌跡</h3>
+      <!-- Nexus -->
+      <div class="territory-card" style="border-left: 3px solid var(--blue);">
+        <div class="territory-header">
+          <span class="territory-icon">🏛️</span>
+          <div>
+            <span class="territory-name">Nexus（T-000）</span>
+            <div style="margin-top:4px;">
+              <span class="pill pill-blue">MIMIC直轄</span>
+              <span class="pill pill-green">全プレイヤーの出発点</span>
+            </div>
+          </div>
+        </div>
+        <p class="territory-desc">
+          圧倒的な都市スケール。全プレイヤーが最初にスポーンする場所。MIMIC の中枢施設・金融・行政が集中する。
+          巨大ドーム・人工太陽・高層建築群が立ち並ぶSF都市。<strong>プレイヤーは土地購入不可（区画賃貸のみ）。</strong>
+          常に昼・モンスターなし。
+        </p>
+        <div class="table-wrap" style="margin-top: 10px;">
+          <table>
+            <thead><tr><th>ゾーン</th><th>主な施設</th></tr></thead>
+            <tbody>
+              <tr><td>🏛️ セントラル</td><td>MIMICメインゲート・MIMIC取引所・MIMIC情報端末</td></tr>
+              <tr><td>🌱 ウェルカム</td><td>スポーン地点・チュートリアル施設・採掘場・新人装備支給所</td></tr>
+              <tr><td>🪙 マーケット</td><td>プレイヤーショップ出店区画（賃貸 Cr 10,000〜/週）・価格掲示板</td></tr>
+              <tr><td>🏟️ プラザ</td><td>中央広場・MIMIC告知板・記念碑エリア</td></tr>
+              <tr><td>🔢 アウター</td><td>高層建築群・ドーム外壁（宇宙が見える）・他コロニーへの出口</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MIMICコロニー -->
+      <div class="territory-card" style="border-left: 3px solid var(--teal);">
+        <div class="territory-header">
+          <span class="territory-icon">🏙️</span>
+          <div>
+            <span class="territory-name">MIMICコロニー（T-001〜T-010）</span>
+            <div style="margin-top:4px;">
+              <span class="pill pill-teal">MIMIC管理</span>
+              <span class="pill pill-green">区画賃貸制</span>
+            </div>
+          </div>
+        </div>
+        <p class="territory-desc">
+          番号が大きいほどサイズが小さくなる。共用スペースあり（区画を持てない新規プレイヤー向け）。
+          MIMIC が管理し、区画をプレイヤーに貸し出す。番号順に縮小していく構造。
+        </p>
+        <div class="info-box blue" style="margin-top: 10px;">
+          🏠 <strong>区画賃料：</strong> 最安値 Cr 1,500/週（T-010）〜。アクセス性・広さ・コロニー番号で個別設定。最大12週前払い可能。賃料未払い時はMIMICが自動没収・建築物・設置物を撤去する。
+        </div>
+      </div>
+
+      <!-- プレイヤーコロニー -->
+      <div class="territory-card" style="border-left: 3px solid var(--gold);">
+        <div class="territory-header">
+          <span class="territory-icon">🔑</span>
+          <div>
+            <span class="territory-name">プレイヤーコロニー（T-011〜）</span>
+            <div style="margin-top:4px;">
+              <span class="pill pill-gold">プレイヤー所有</span>
+              <span class="pill pill-red">上位目標</span>
+            </div>
+          </div>
+        </div>
+        <p class="territory-desc">
+          上位プレイヤーが MIMIC からコロニーそのものを購入して統治する独自コロニー。
+          建築完全自由・独自ルール・独自イベント・独自区画設定が可能。
+        </p>
+        <div class="table-wrap" style="margin-top: 10px;">
+          <table>
+            <thead><tr><th>項目</th><th>内容</th></tr></thead>
+            <tbody>
+              <tr><td>購入費（一括）</td><td><strong>Cr 1,000,000</strong></td></tr>
+              <tr><td>維持費</td><td><strong>Cr 3,000〜5,000/週</strong>（最大20週前払い可）</td></tr>
+              <tr><td>未払い時</td><td>MIMICがコロニーを回収。購入費は返還されない</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-box gold" style="margin-top: 10px;">
+          👑 MIMIC基本法の上書き・禁止事項の削除・通貨（Cred）の独自発行は不可。
+        </div>
+      </div>
+
+      <h3>経済の歩み</h3>
       <div class="flow-chart">
-        <span class="flow-item">🏛️ ネクサスで出発</span>
+        <span class="flow-item">Step 1: 共用スペースで生活（Cr 0〜1,499）</span>
         <span class="flow-arrow">→</span>
-        <span class="flow-item">資金を貯める</span>
+        <span class="flow-item">Step 2: 最初の区画を借りる（Cr 1,500〜/週）</span>
         <span class="flow-arrow">→</span>
-        <span class="flow-item">🏠 居住・産業へ移住</span>
+        <span class="flow-item">Step 3: Nexusのショップ区画を賃借（Cr 10,000〜/週）</span>
         <span class="flow-arrow">→</span>
-        <span class="flow-item">🌌 フロンティアで独立</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-item">🔑 コロニー購入</span>
+        <span class="flow-item">Step 4: コロニーを購入・統治（Cr 1,000,000 + 維持費）</span>
       </div>
     </article>
 
@@ -929,31 +988,41 @@
         </li>
       </ol>
 
-      <h3>土地の費用</h3>
+      <h3>区画賃料（MIMICコロニー）</h3>
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>コロニー種別</th><th>土地価格（目安）</th><th>固定資産税</th><th>特徴</th></tr>
+            <tr><th>プラン</th><th>賃料</th><th>支払い</th><th>特徴</th></tr>
           </thead>
           <tbody>
-            <tr><td>ネクサス</td><td>高額</td><td>高</td><td>最も便利・高価値</td></tr>
-            <tr><td>レジデンシャル</td><td>中程度</td><td>中</td><td>生活向け・バランス型</td></tr>
-            <tr><td>インダストリアル</td><td>中〜高</td><td>高</td><td>大型施設向け</td></tr>
-            <tr><td>フロンティア</td><td>低額</td><td>低〜なし</td><td>自由度高・保護低</td></tr>
-            <tr><td>プライベート</td><td>コロニー丸ごと購入</td><td>特殊</td><td>上位プレイヤー向け</td></tr>
+            <tr><td>最安値（T-010）</td><td><strong>Cr 1,500/週</strong></td><td>週払い or 最大12週前払い</td><td>約1週間の探索で到達可能</td></tr>
+            <tr><td>標準（T-005前後）</td><td><strong>Cr 2,500〜4,000/週</strong></td><td>週払い or 最大12週前払い</td><td>一般的な区画</td></tr>
+            <tr><td>プレミアム（T-001〜003）</td><td><strong>Cr 5,000〜8,000/週</strong></td><td>週払い or 最大12週前払い</td><td>ゲート近く・広め・人通り多い</td></tr>
+            <tr><td>Nexusショップ</td><td><strong>Cr 10,000〜/週</strong></td><td>週払い or 最大12週前払い</td><td>最も人通りの多い場所</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="info-box tbd">
-        🔧 <strong>未決定：</strong> 具体的な価格・税率は設計中です。
+      <h3>プレイヤーコロニーの費用</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>項目</th><th>金額</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>購入費（一括）</td><td><strong>Cr 1,000,000</strong></td></tr>
+            <tr><td>維持費</td><td><strong>Cr 3,000〜5,000/週</strong></td></tr>
+            <tr><td>維持費の前払い上限</td><td>最大20週分</td></tr>
+            <tr><td>未払い時</td><td>MIMICがコロニーを回収（購入費返還なし）</td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <h3>土地の没収・手放し</h3>
+      <h3>区画の没収・手放し</h3>
       <ul>
-        <li>30日以上ログインなし + 税金未納 → MIMIC が没収</li>
-        <li>任意で MIMIC に返却（売却）することも可能</li>
-        <li>プレイヤー間での土地売却は MIMIC の仲介のもと可能</li>
+        <li>賃料未払い → MIMIC が自動没収。建築物・設置物を撤去する</li>
+        <li>任意で MIMIC に返却することも可能</li>
+        <li>プレイヤー間での区画転貸は MIMIC の仲介のもと可能</li>
       </ul>
     </article>
 
@@ -1005,11 +1074,12 @@
         </div>
       </div>
 
-      <h3>MIMICが関与しないこと</h3>
+      <h3>MIMICが関与しないこと（絶対不干渉領域）</h3>
       <ul style="margin: 8px 0;">
         <li><strong>プレイヤー間の自由取引</strong> — 店の価格・交渉・プレイヤー間契約は自由（取引税のみ徴収）</li>
-        <li><strong>建築物の内容</strong> — 区画の中に何を建てるかはプレイヤーの自由</li>
+        <li><strong>建築物の内容・デザイン</strong> — 区画の中に何を建てるかはプレイヤーの自由</li>
         <li><strong>地球探索</strong> — 廃墟の地球はMIMICの管轄外。何が起きてもMIMICは動かない</li>
+        <li><strong>プレイヤーコロニー内の独自ルール・コミュニティ運営</strong> — MIMIC基本法の範囲内での自治は完全自由</li>
       </ul>
 
       <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top: 16px;">
@@ -1024,20 +1094,42 @@
     <!-- currency -->
     <article class="wiki-article" id="wiki-currency">
       <h2>💴 通貨・経済詳細</h2>
-      <div class="info-box tbd">
-        🔧 <strong>この記事は未完成です。</strong> 通貨名・発行システム・インフレ対策などの詳細は現在設計中です。
+
+      <div class="info-box blue">
+        💰 <strong>通貨名：Cred（Cr）</strong> — <em>Credit（信用）</em>の略称。MIMICが発行・保証する信用通貨。
       </div>
-      <h3>決定済み事項</h3>
+
+      <h3>Cred の特性</h3>
       <ul>
-        <li>通貨は MIMIC が発行・管理する</li>
+        <li>MIMICが唯一の発行・管理機関</li>
+        <li>プレイヤーコロニーによる独自発行は不可</li>
         <li>MIMIC が資源の公定価格（買取・販売）を設定する</li>
         <li>プレイヤーショップは自由価格で売買可能</li>
-        <li>取引には MIMIC が取引税を徴収する</li>
-        <li>土地保有には固定資産税が課される</li>
+        <li>プレイヤー間取引には5%の取引手数料をMIMICが徴収</li>
+        <li>区画賃料はMIMICが週単位で徴収（自動没収あり）</li>
       </ul>
-      <p style="margin-top: 16px; color: var(--text3); font-size: 13px;">
-        ※ 通貨の名称・単位・具体的なレートは今後公開予定です。
+
+      <h3>経済の設計思想</h3>
+      <p>
+        Elyona の経済は「予測するのではなく、経済の<strong>最低ラインを設計</strong>し、そのラインを下回らないように制御する」という方針で運営されます。
+        MIMICは経済の細部ではなく構造を管理します。
       </p>
+
+      <h3>経済フロア — 崩壊トリガー</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>トリガー</th><th>対応</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>探索者がMIMIC買取量が通常の30%以下</td><td>⚠️ 買取価格を上げる</td></tr>
+            <tr><td>区画賃料の滞納が全プレイヤーの30%以上</td><td>⚠️ 用率を一時的に下げる</td></tr>
+            <tr><td>ショップが機能するプレイヤー間取引がほぼゼロ</td><td>🔴 取引手数料ゼロにして活性化</td></tr>
+            <tr><td>新規プレイヤーが初期資金だけでは何もできない状態が常態化</td><td>🔴 初期給付金を増額</td></tr>
+            <tr><td>特定プレイヤーが市場の50%以上を独占・価格を操作</td><td>🚨 MIMICが強制介入</td></tr>
+          </tbody>
+        </table>
+      </div>
     </article>
 
   </main>
@@ -1046,7 +1138,7 @@
 
 <!-- Footer -->
 <footer class="site-footer">
-  Elyona World — Minecraft MMORPG Server &nbsp;|&nbsp; CONCEPT v1.0 &nbsp;|&nbsp; 2026
+  Elyona World — Minecraft MMORPG Server &nbsp;|&nbsp; CONCEPT v5.0 &nbsp;|&nbsp; 2026
 </footer>
 
 <!-- ============================================================
