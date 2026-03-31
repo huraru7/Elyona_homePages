@@ -1,0 +1,1057 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elyona World — Minecraft Server</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav>
+  <span class="nav-logo" onclick="showPage('home')">Elyona<span>World</span></span>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="showPage('home')" id="nav-home">ホーム</button>
+    <button class="nav-btn" onclick="showPage('news')" id="nav-news">お知らせ</button>
+    <button class="nav-btn" onclick="showPage('rules')" id="nav-rules">ルール</button>
+    <button class="nav-btn" onclick="showPage('wiki')" id="nav-wiki">サーバー紹介 / Wiki</button>
+  </div>
+  <div class="nav-status">
+    <span class="status-dot"></span>
+    <span>ONLINE</span>
+  </div>
+</nav>
+
+<!-- ============================================================
+     PAGE: HOME
+     ============================================================ -->
+<div class="page active" id="page-home">
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero-eyebrow">// MINECRAFT MMORPG SERVER</p>
+    <h1>Elyona World</h1>
+    <p class="hero-desc">
+      現実と並走する、もうひとつの人生。<br>
+      宇宙コロニーを舞台にした MMORPG 生活サーバー。
+      探索・生活・経済、すべての楽しみ方があなたを待っている。
+    </p>
+    <div class="join-box">
+      <div>
+        <div class="join-label">サーバーアドレス</div>
+        <div class="join-addr" id="server-addr">play.elyona.example</div>
+      </div>
+      <button class="copy-btn" onclick="copyAddr()">コピー</button>
+    </div>
+  </div>
+
+  <!-- Quick Info -->
+  <p class="section-label">サーバーについて</p>
+  <div class="card-grid card-grid-3" style="margin-bottom: 32px;">
+    <div class="card accent-blue quick-card">
+      <div>
+        <div class="quick-icon">🚀</div>
+        <h3>地球探索</h3>
+        <p>廃墟となった地球でダンジョンを攻略し、超技術アイテムを発掘しよう。採取した資源がすべての起点になる。</p>
+      </div>
+    </div>
+    <div class="card accent-teal quick-card">
+      <div>
+        <div class="quick-icon">🏙️</div>
+        <h3>コロニー生活</h3>
+        <p>宇宙コロニーの一員として、土地を購入し家や店を建設。職業・経済・コミュニティで充実した第2の人生を。</p>
+      </div>
+    </div>
+    <div class="card accent-gold quick-card">
+      <div>
+        <div class="quick-icon">💹</div>
+        <h3>プレイヤー経済</h3>
+        <p>資源を採取→加工→販売。資産を積み上げてコロニーを購入し、Elyona最大の地主を目指せ。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Server Stats -->
+  <p class="section-label">サーバー情報</p>
+  <div class="card" style="margin-bottom: 32px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
+      <div>
+        <div class="section-label" style="margin-bottom: 4px;">バージョン</div>
+        <div style="font-family: var(--font-mono); font-size: 15px;">Java 1.21</div>
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom: 4px;">プレイヤー数</div>
+        <div style="font-family: var(--font-mono); font-size: 15px; color: var(--green);">0 / 50</div>
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom: 4px;">ステータス</div>
+        <div style="font-family: var(--font-mono); font-size: 15px; color: var(--gold);">開発中</div>
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom: 4px;">ジャンル</div>
+        <div style="font-size: 14px;">MMORPG 生活サーバー</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest News -->
+  <p class="section-label">最新のお知らせ</p>
+  <div class="card home-news">
+    <div class="news-item-mini" onclick="showPage('news')">
+      <div class="news-date-mini">2026-03-31</div>
+      <div>
+        <div class="news-item-title">コンセプトドキュメント v1.0 公開</div>
+        <div class="news-item-cat">📋 サーバー情報</div>
+      </div>
+    </div>
+    <div class="news-item-mini" onclick="showPage('news')">
+      <div class="news-date-mini">2026-03-31</div>
+      <div>
+        <div class="news-item-title">Elyona World 企画始動のお知らせ</div>
+        <div class="news-item-cat">🎉 アナウンス</div>
+      </div>
+    </div>
+    <div style="padding-top: 14px; text-align: right;">
+      <a href="#" onclick="showPage('news'); return false;" style="font-size: 13px;">すべてのお知らせを見る →</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ============================================================
+     PAGE: NEWS
+     ============================================================ -->
+<div class="page" id="page-news">
+<div class="container">
+  <div class="page-title">📋 お知らせ</div>
+  <div class="page-subtitle">サーバーに関する最新情報・アップデート情報はここで確認できます。</div>
+
+  <div class="news-list">
+
+    <div class="news-card" onclick="toggleNews(this)">
+      <div class="news-card-header">
+        <div style="flex:1">
+          <div class="news-meta">
+            <span class="news-date">2026-03-31</span>
+            <span class="pill pill-blue">サーバー情報</span>
+          </div>
+          <div class="news-title">コンセプトドキュメント v1.0 公開</div>
+          <div class="news-summary">Elyona World のサーバーコンセプト・世界観・ゲームプレイ設計の第1版を公開しました。</div>
+        </div>
+        <span class="news-chevron">▼</span>
+      </div>
+      <div class="news-body">
+        <p>サーバー「Elyona World」の基本設計となるコンセプトドキュメント v1.0 を策定しました。</p>
+        <p>本ドキュメントでは以下が決定されています：</p>
+        <ul>
+          <li>サーバー名称（外部：Elyona World / 内部：Elyona）</li>
+          <li>世界設定（約2000年後・第一次世界大戦後・宇宙コロニー）</li>
+          <li>コンセプト（MMORPGライフサーバー・メタバース的第2の人生）</li>
+          <li>3大ゲームプレイ（地球探索・コロニー生活・経済システム）</li>
+          <li>MIMIC 設計（無機質AI・4大権限・絶対的存在）</li>
+          <li>コロニー構造（5種類・ネクサスから起点）</li>
+        </ul>
+        <p>詳細はサーバー紹介 / Wiki ページをご覧ください。</p>
+      </div>
+    </div>
+
+    <div class="news-card" onclick="toggleNews(this)">
+      <div class="news-card-header">
+        <div style="flex:1">
+          <div class="news-meta">
+            <span class="news-date">2026-03-31</span>
+            <span class="pill pill-green">アナウンス</span>
+          </div>
+          <div class="news-title">Elyona World 企画始動のお知らせ</div>
+          <div class="news-summary">Minecraft MMORPG 生活サーバー「Elyona World」の企画が正式に始動しました。</div>
+        </div>
+        <span class="news-chevron">▼</span>
+      </div>
+      <div class="news-body">
+        <p>この度、Minecraft の MMORPG 生活サーバー「Elyona World」の企画が始動しました。</p>
+        <p>Elyona は「現実と並走する第2の人生」をコンセプトに、探索・生活・経済が融合したサーバーを目指しています。
+           どんなプレイスタイルでも楽しめる設計を心がけています。</p>
+        <p>現在は設計段階ですが、随時情報を更新していきます。続報をお待ちください！</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ============================================================
+     PAGE: RULES
+     ============================================================ -->
+<div class="page" id="page-rules">
+<div class="container">
+  <div class="page-title">📜 サーバールール</div>
+  <div class="page-subtitle">Elyona で楽しく遊ぶために、必ずルールを読んでから参加してください。</div>
+
+  <!-- ToC -->
+  <div class="rules-toc">
+    <h3>目次</h3>
+    <ul>
+      <li><a href="#rule-basic">§1 基本ルール</a></li>
+      <li><a href="#rule-build">§2 建築・土地ルール</a></li>
+      <li><a href="#rule-economy">§3 経済・取引ルール</a></li>
+      <li><a href="#rule-explore">§4 地球探索ルール</a></li>
+      <li><a href="#rule-mimic">§5 MIMIC に関するルール</a></li>
+      <li><a href="#rule-sanction">§6 違反時の制裁</a></li>
+    </ul>
+  </div>
+
+  <!-- §1 基本ルール -->
+  <div class="rule-section" id="rule-basic">
+    <div class="rule-section-title">
+      <span class="pill pill-blue">§1</span> 基本ルール
+    </div>
+    <ul class="rule-list">
+      <li class="rule-item">
+        <span class="rule-num">1.1</span>
+        <div class="rule-content">
+          <strong>他プレイヤーへの尊重</strong>
+          <p>暴言・差別・ハラスメント行為は一切禁止です。すべてのプレイヤーが快適に遊べる環境を守ってください。</p>
+        </div>
+        <span class="severity sev-ban">BAN</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">1.2</span>
+        <div class="rule-content">
+          <strong>チート・改造クライアントの禁止</strong>
+          <p>X-Ray、飛行チート、速度改ざん等のチートは禁止です。OptiFine・Sodium 等の描画系 MOD は許可。</p>
+        </div>
+        <span class="severity sev-perm">永久BAN</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">1.3</span>
+        <div class="rule-content">
+          <strong>垢売り・代理プレイの禁止</strong>
+          <p>アカウントの売買・譲渡・他人による代理プレイは禁止です。</p>
+        </div>
+        <span class="severity sev-ban">BAN</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">1.4</span>
+        <div class="rule-content">
+          <strong>グリーフィングの禁止</strong>
+          <p>他プレイヤーの建築物・設備を無断で破壊・改変することは禁止です。</p>
+        </div>
+        <span class="severity sev-ban">BAN</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- §2 建築 -->
+  <div class="rule-section" id="rule-build">
+    <div class="rule-section-title">
+      <span class="pill pill-teal">§2</span> 建築・土地ルール
+    </div>
+    <ul class="rule-list">
+      <li class="rule-item">
+        <span class="rule-num">2.1</span>
+        <div class="rule-content">
+          <strong>土地の購入と建築</strong>
+          <p>建築は必ず MIMIC から購入した区画内で行ってください。未購入の土地への建築は撤去されます。</p>
+        </div>
+        <span class="severity sev-info">撤去</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">2.2</span>
+        <div class="rule-content">
+          <strong>建築内容の自由</strong>
+          <p>購入した土地内の建築物の内容はプレイヤーの自由です。ただし、景観を著しく損なう巨大なラグ施設は規制対象になる場合があります。</p>
+        </div>
+        <span class="severity sev-info">注意</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">2.3</span>
+        <div class="rule-content">
+          <strong>放棄地の処理</strong>
+          <p>長期間（30日以上）ログインがなく、税金未納の土地は MIMIC により没収されます。</p>
+        </div>
+        <span class="severity sev-info">没収</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- §3 経済 -->
+  <div class="rule-section" id="rule-economy">
+    <div class="rule-section-title">
+      <span class="pill pill-gold">§3</span> 経済・取引ルール
+    </div>
+    <ul class="rule-list">
+      <li class="rule-item">
+        <span class="rule-num">3.1</span>
+        <div class="rule-content">
+          <strong>プレイヤー間取引の自由</strong>
+          <p>プレイヤー同士の価格設定・交渉・契約は自由です。ただし取引詐欺は規制対象です。</p>
+        </div>
+        <span class="severity sev-warn">警告〜BAN</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">3.2</span>
+        <div class="rule-content">
+          <strong>経済バグの悪用禁止</strong>
+          <p>ゲーム内の経済バグを意図的に利用して不正に通貨・アイテムを複製する行為は禁止です。発見した場合は運営に報告してください。</p>
+        </div>
+        <span class="severity sev-perm">永久BAN</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">3.3</span>
+        <div class="rule-content">
+          <strong>独占・市場操作の禁止</strong>
+          <p>特定の資源を意図的に独占し、市場価格を操作する行為は禁止です。</p>
+        </div>
+        <span class="severity sev-warn">警告〜制限</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- §4 探索 -->
+  <div class="rule-section" id="rule-explore">
+    <div class="rule-section-title">
+      <span class="pill pill-red">§4</span> 地球探索ルール
+    </div>
+    <ul class="rule-list">
+      <li class="rule-item">
+        <span class="rule-num">4.1</span>
+        <div class="rule-content">
+          <strong>PvP について</strong>
+          <p>地球（廃墟ワールド）での PvP は原則許可エリアのみ有効です。コロニー内での無断 PvP は禁止。</p>
+        </div>
+        <span class="severity sev-info">エリア依存</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">4.2</span>
+        <div class="rule-content">
+          <strong>ダンジョンの独占禁止</strong>
+          <p>ダンジョン入口を封鎖して他プレイヤーの進入を妨げる行為は禁止です。</p>
+        </div>
+        <span class="severity sev-warn">警告</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- §5 MIMIC -->
+  <div class="rule-section" id="rule-mimic">
+    <div class="rule-section-title">
+      <span class="pill pill-purple">§5</span> MIMIC に関するルール
+    </div>
+    <ul class="rule-list">
+      <li class="rule-item">
+        <span class="rule-num">5.1</span>
+        <div class="rule-content">
+          <strong>MIMIC の決定への服従</strong>
+          <p>MIMIC による土地管理・課税・制裁の決定は最終的なものです。ゲーム内での異議申し立ては手続きが存在しません（世界観設定）。</p>
+        </div>
+        <span class="severity sev-info">設定</span>
+      </li>
+      <li class="rule-item">
+        <span class="rule-num">5.2</span>
+        <div class="rule-content">
+          <strong>MIMIC システムの悪用禁止</strong>
+          <p>MIMIC の課税・制裁システムのバグを意図的に悪用する行為は禁止です。</p>
+        </div>
+        <span class="severity sev-ban">BAN</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- §6 制裁 -->
+  <div class="rule-section" id="rule-sanction">
+    <div class="rule-section-title">
+      <span class="pill pill-red">§6</span> 違反時の制裁
+    </div>
+    <div class="card accent-red" style="margin-bottom: 12px;">
+      <p style="font-size: 13px; color: var(--text2);">違反の重大度に応じて以下の制裁が適用されます。運営の判断により段階を飛ばす場合があります。</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>段階</th>
+            <th>内容</th>
+            <th>対象ルール（例）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="severity sev-warn">警告</span></td>
+            <td>口頭・チャット警告。繰り返しで次の段階へ。</td>
+            <td>3.1, 4.2 など軽度違反</td>
+          </tr>
+          <tr>
+            <td><span class="severity sev-ban">一時 BAN</span></td>
+            <td>一定期間のアクセス停止（1日〜30日）</td>
+            <td>1.1, 1.4, 3.1 など</td>
+          </tr>
+          <tr>
+            <td><span class="severity sev-perm">永久 BAN</span></td>
+            <td>アカウントの永久アクセス停止。資産没収。</td>
+            <td>1.2, 3.2 などの重大違反</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info-box blue" style="margin-top: 8px;">
+      💬 ルールへの質問・異議申し立てはDiscordの運営チャンネルで受け付けています。
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ============================================================
+     PAGE: WIKI
+     ============================================================ -->
+<div class="page" id="page-wiki">
+<div class="wiki-layout">
+
+  <!-- Sidebar -->
+  <aside class="wiki-sidebar">
+    <div class="wiki-sidebar-title">サーバー紹介 / Wiki</div>
+    <input class="search-input" placeholder="記事を検索..." oninput="wikiSearch(this.value)" style="font-size:12px; padding: 7px 12px; margin-bottom: 12px;">
+
+    <div class="wiki-cat-label">概要</div>
+    <button class="wiki-nav-btn active" onclick="showWiki('overview')">サーバー概要</button>
+    <button class="wiki-nav-btn" onclick="showWiki('worldlore')">世界設定・ロア</button>
+    <button class="wiki-nav-btn" onclick="showWiki('start')">はじめかた</button>
+
+    <div class="wiki-cat-label">ゲームプレイ</div>
+    <button class="wiki-nav-btn" onclick="showWiki('explore')">地球探索</button>
+    <button class="wiki-nav-btn" onclick="showWiki('colony')">コロニー生活</button>
+    <button class="wiki-nav-btn" onclick="showWiki('economy')">経済システム</button>
+    <button class="wiki-nav-btn" onclick="showWiki('jobs')">職業・スキル <span style="color:var(--text3);font-size:10px;margin-left:4px;">TBD</span></button>
+
+    <div class="wiki-cat-label">コロニー</div>
+    <button class="wiki-nav-btn" onclick="showWiki('territory')">コロニー一覧</button>
+    <button class="wiki-nav-btn" onclick="showWiki('land')">土地購入ガイド</button>
+
+    <div class="wiki-cat-label">システム</div>
+    <button class="wiki-nav-btn" onclick="showWiki('mimic')">MIMIC（統治AI）</button>
+    <button class="wiki-nav-btn" onclick="showWiki('currency')">通貨・経済 <span style="color:var(--text3);font-size:10px;margin-left:4px;">TBD</span></button>
+  </aside>
+
+  <!-- Wiki Content -->
+  <main class="wiki-content">
+
+    <!-- overview -->
+    <article class="wiki-article active" id="wiki-overview">
+      <h2>🌌 サーバー概要</h2>
+      <p>
+        <strong>Elyona World</strong>（内部通称：<em>Elyona</em>）は、宇宙コロニーを舞台にした
+        Minecraft MMORPG 生活サーバーです。現実と並走する「第2の人生」として、
+        探索・生活・経済のすべてを体験できます。
+      </p>
+
+      <div class="info-box blue">
+        📡 <strong>サーバー名の由来：</strong>
+        ヘブライ語の <em>El</em>（光・神）+ 古語の <em>yon</em>（彼方・あの世界）+ 場所を示す語尾 <em>-a</em>
+        ＝「光の彼方の大地」。Elysium（楽園）の語根とも重なる二重の意味構造を持つ。
+      </div>
+
+      <h3>3つのゲームプレイ</h3>
+      <div class="card-grid" style="grid-template-columns: 1fr; gap: 8px; margin: 12px 0;">
+        <div class="card accent-red">
+          <div class="quick-card">
+            <div class="quick-icon">🌍</div>
+            <div>
+              <h3>地球探索</h3>
+              <p style="font-size:13px; color:var(--text2);">廃墟となった地球でダンジョンを攻略・資源を採取。超技術アイテムの発掘が冒険の醍醐味。</p>
+            </div>
+          </div>
+        </div>
+        <div class="card accent-blue">
+          <div class="quick-card">
+            <div class="quick-icon">🏙️</div>
+            <div>
+              <h3>コロニー生活</h3>
+              <p style="font-size:13px; color:var(--text2);">宇宙コロニーで土地を購入・建設。職業・経済・社交でもう一つの人生を生きる。</p>
+            </div>
+          </div>
+        </div>
+        <div class="card accent-gold">
+          <div class="quick-card">
+            <div class="quick-icon">📊</div>
+            <div>
+              <h3>経済システム</h3>
+              <p style="font-size:13px; color:var(--text2);">資源採取→加工→販売のサイクルで資産を蓄え、コロニー購入を目指す。プレイヤー主導の管理経済。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>対象プレイヤー</h3>
+      <p>どんなプレイスタイルでも何かの楽しみ方が用意されています。</p>
+      <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;">
+        <span class="pill pill-red">冒険者タイプ</span>
+        <span class="pill pill-teal">生活者タイプ</span>
+        <span class="pill pill-purple">社交タイプ</span>
+        <span class="pill pill-blue">クリエイタータイプ</span>
+        <span class="pill pill-gold">経営者タイプ</span>
+      </div>
+    </article>
+
+    <!-- worldlore -->
+    <article class="wiki-article" id="wiki-worldlore">
+      <h2>📖 世界設定・ロア</h2>
+
+      <div class="info-box gold">
+        🕰️ 時代設定：現在より約2000年後の未来
+      </div>
+
+      <h3>世界の歴史</h3>
+      <p>
+        現在より約2000年後の未来、人類は長きにわたる<strong>第一次世界大戦</strong>を戦い続けた。
+        地球は居住不能な廃墟となり、かつての文明の遺物のみが荒廃した大地に残されている。
+      </p>
+      <p>
+        しかし戦争から生まれた技術の飛躍により、人類は宇宙へと活路を見出した。
+        <strong>「コロニー」</strong>と呼ばれる宇宙居住区が建設され、プレイヤーはそのコロニーの住民として Elyona の世界を生きる。
+      </p>
+
+      <h3>地球の現状</h3>
+      <div class="card accent-red" style="margin: 12px 0;">
+        <p style="font-size:14px; color:var(--text2); margin:0;">
+          長期戦争により<strong style="color:var(--text);">居住不能</strong>となった地球。
+          戦時中の超技術の遺物が各地に放棄されており、探索価値は依然として高い。
+          コロニーからの探索隊が定期的に派遣されている。
+        </p>
+      </div>
+
+      <h3>コロニー「コロニー」とは</h3>
+      <p>
+        地球の廃墟から技術を引き継ぎ、宇宙に建設された人類の新しい居住区。
+        コロニーは MIMIC のネットワークで繋がっており、見た目は地下都市に近い。
+        <strong>ドーム・人工重力・人工大気</strong>などSF的要素が随所に存在する。
+      </p>
+
+      <div class="info-box blue" style="margin-top: 16px;">
+        💡 プレイヤーはコロニーの「住民」としてゲームを開始します。地球への探索は「遠征」として行われます。
+      </div>
+    </article>
+
+    <!-- start -->
+    <article class="wiki-article" id="wiki-start">
+      <h2>🚀 はじめかた</h2>
+
+      <h3>参加の流れ</h3>
+      <div class="flow-chart">
+        <span class="flow-item">サーバーに接続</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">ネクサスにスポーン</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">チュートリアル</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">地球で資源採取</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">MIMICに売却</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">土地購入</span>
+      </div>
+
+      <h3>最初にやること</h3>
+      <ol style="padding-left: 20px; margin: 12px 0;">
+        <li style="margin-bottom: 8px; color: var(--text2);">
+          <strong style="color:var(--text);">ネクサス・コロニーを探索する</strong>
+          — まずスポーン地点であるネクサスを散策し、施設の位置を把握しよう。
+        </li>
+        <li style="margin-bottom: 8px; color: var(--text2);">
+          <strong style="color:var(--text);">地球へ遠征・資源採取</strong>
+          — ゲートから地球へ行き、木材・石炭・鉱石などの基本資源を集めてくる。
+        </li>
+        <li style="margin-bottom: 8px; color: var(--text2);">
+          <strong style="color:var(--text);">MIMIC に資源を売却</strong>
+          — 採取した資源を MIMIC の公定価格で売却して通貨を獲得する。
+        </li>
+        <li style="margin-bottom: 8px; color: var(--text2);">
+          <strong style="color:var(--text);">土地を購入・拠点を建設</strong>
+          — 貯めた資金でコロニー内の土地を購入し、自分の家を建てよう。
+        </li>
+        <li style="color: var(--text2);">
+          <strong style="color:var(--text);">職業・プレイスタイルを決める</strong>
+          — 探索特化・生産業・商売など、自分のロールを見つけて深めていく。
+        </li>
+      </ol>
+
+      <div class="info-box green">
+        ✅ <strong>初心者向けTip：</strong> 最初はネクサスの無料区画に仮拠点を構えると安全。資金が貯まったら好みのコロニーへ引っ越そう。
+      </div>
+    </article>
+
+    <!-- explore -->
+    <article class="wiki-article" id="wiki-explore">
+      <h2>🌍 地球探索</h2>
+      <p>廃墟となった地球は、Elyona の資源と財の主要な供給源です。</p>
+
+      <div class="info-box red">
+        ⚠️ 地球は危険エリアです。適切な装備と準備を整えてから遠征してください。
+      </div>
+
+      <h3>資源採取</h3>
+      <p>
+        地球では通常の Minecraft 資源（木材・石炭・鉄・ダイヤなど）を採取できます。
+        採取した資源は MIMIC に売却するか、自分で加工・使用することができます。
+      </p>
+      <p>
+        地球は<strong>定期的にリセット</strong>されるため資源が枯渇することはありませんが、
+        リセット直後はより良い資源が得やすくなります。
+      </p>
+
+      <div class="info-box tbd">
+        🔧 <strong>未決定：</strong> リセットの頻度・ルール・演出については現在設計中です。
+      </div>
+
+      <h3>ダンジョン・遺跡探索</h3>
+      <p>
+        地球には戦時中に建設された<strong>ダンジョン</strong>や<strong>放棄施設</strong>が点在しています。
+        攻略することで<strong>超技術アイテム</strong>を入手できます。
+      </p>
+      <ul style="margin: 8px 0;">
+        <li>速度上昇・攻撃力上昇などの強化効果を持つレア装備</li>
+        <li>コロニー内でも高い価値を持つ希少素材</li>
+        <li>特殊な加工に必要なパーツ類</li>
+      </ul>
+
+      <h3>超技術アイテム（レアリティ）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>レアリティ</th><th>説明</th><th>入手難度</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pill pill-gray">COMMON</span></td>
+              <td>基本的な旧時代の装備</td>
+              <td>易しい</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-blue">UNCOMMON</span></td>
+              <td>軽微な強化効果付き</td>
+              <td>普通</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-purple">RARE</span></td>
+              <td>顕著な強化効果・特殊能力付き</td>
+              <td>難しい</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-gold">LEGENDARY</span></td>
+              <td>戦争時代の最高技術品・固有効果</td>
+              <td>非常に難しい</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box tbd">
+        🔧 <strong>未決定：</strong> 超技術アイテムの具体的な効果・バランスは設計中です。
+      </div>
+    </article>
+
+    <!-- colony -->
+    <article class="wiki-article" id="wiki-colony">
+      <h2>🏙️ コロニー生活</h2>
+      <p>コロニーは Elyona における「もうひとつの人生」の舞台です。</p>
+
+      <h3>コロニーとは</h3>
+      <p>
+        廃墟となった地球の軌道上・宇宙空間に建設された<strong>人類の居住区</strong>。
+        各コロニーは独立した宇宙構造物ですが、MIMIC のネットワークで繋がっています。
+        外観は地下都市に近く、ドーム・人工重力・人工大気などのSF的要素が実在する。
+      </p>
+
+      <h3>土地と建築</h3>
+      <ul style="margin: 8px 0;">
+        <li><strong>区画購入</strong> — MIMIC から土地を購入して建築権を得る</li>
+        <li><strong>建築の自由</strong> — 購入した区画内は何でも自由に建設可能</li>
+        <li><strong>固定資産税</strong> — 保有区画に対して MIMIC が定期的に課税する</li>
+        <li><strong>施設建設</strong> — 家・店舗・工場・公共施設など目的は自由</li>
+      </ul>
+
+      <h3>プレイヤーショップ</h3>
+      <p>
+        土地にショップを構え、採取・加工した資源やアイテムを自由価格で売買できます。
+        プレイヤー間の取引は Elyona の経済の中核です。
+      </p>
+
+      <h3>コロニーの購入（上位目標）</h3>
+      <p>
+        十分な資産を積み上げた上位プレイヤーは、MIMIC からコロニーそのものを購入し、
+        <strong>独自のルール・税制</strong>を設定できるようになります。
+        これが Elyona における最大の経済的目標です。
+      </p>
+      <div class="info-box gold">
+        👑 コロニーを購入しても、MIMIC の基本法は上書きできません。あくまで独自ルールの追加が可能です。
+      </div>
+    </article>
+
+    <!-- economy -->
+    <article class="wiki-article" id="wiki-economy">
+      <h2>💹 経済システム</h2>
+      <p>Elyona の経済はプレイヤーが主体となって動かす管理経済です。</p>
+
+      <h3>基本の経済フロー</h3>
+      <div class="flow-chart">
+        <span class="flow-item">🌍 地球で採取</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">MIMICに売却</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">通貨獲得</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">土地・施設購入</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">加工・販売</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">🏙️ コロニー購入へ</span>
+      </div>
+
+      <h3>MIMIC 売却（公定価格）</h3>
+      <p>
+        地球で採取した資源は MIMIC に<strong>固定価格</strong>で売却できます。
+        相場変動がなく安定した収入源ですが、プレイヤーショップほどの高利益にはなりません。
+      </p>
+
+      <h3>プレイヤーショップ（自由価格）</h3>
+      <p>
+        自分の土地にショップを開設し、資源・加工品・レアアイテムを<strong>自由価格</strong>で販売できます。
+        MIMIC 売却より高く売れる可能性があり、上手く運営すれば大きな収益になります。
+      </p>
+
+      <h3>二次産業・加工</h3>
+      <p>
+        施設を建てて資源を加工することで<strong>付加価値</strong>をつけて販売できます。
+        製造業プレイとして特化することも可能です。
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>収入源</th><th>特徴</th><th>安定性</th><th>利益率</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>MIMIC 売却</strong></td>
+              <td>固定価格・誰でも利用可</td>
+              <td>★★★</td>
+              <td>★★☆</td>
+            </tr>
+            <tr>
+              <td><strong>プレイヤーショップ</strong></td>
+              <td>自由価格・立地と運営力次第</td>
+              <td>★★☆</td>
+              <td>★★★</td>
+            </tr>
+            <tr>
+              <td><strong>加工・製造</strong></td>
+              <td>施設投資が必要・高付加価値</td>
+              <td>★☆☆</td>
+              <td>★★★</td>
+            </tr>
+            <tr>
+              <td><strong>MIMIC からの購入代行</strong></td>
+              <td>資源不足プレイヤー向けに資源を仕入れて販売</td>
+              <td>★★☆</td>
+              <td>★★☆</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box tbd">
+        🔧 <strong>未決定：</strong> 通貨名・インフレ対策・通貨発行の詳細は現在設計中です。
+      </div>
+    </article>
+
+    <!-- jobs -->
+    <article class="wiki-article" id="wiki-jobs">
+      <h2>⚒️ 職業・スキルシステム</h2>
+      <div class="info-box tbd">
+        🔧 <strong>この記事は未完成です。</strong> 職業・ロール・スキルシステムは現在設計中です。
+      </div>
+      <h3>想定される職業カテゴリ</h3>
+      <ul>
+        <li><strong>探索者</strong> — 地球での資源採取・ダンジョン攻略を専門とする</li>
+        <li><strong>商人</strong> — プレイヤーショップ経営・売買を専門とする</li>
+        <li><strong>建築家</strong> — 建設・街づくりを専門とする</li>
+        <li><strong>製造業者</strong> — 資源加工・製品生産を専門とする</li>
+        <li><strong>冒険者</strong> — ダンジョン攻略・PvP コンテンツを専門とする</li>
+      </ul>
+      <p style="margin-top: 16px; color: var(--text3); font-size: 13px;">
+        ※ 上記はあくまで想定案です。詳細が決定次第更新されます。
+      </p>
+    </article>
+
+    <!-- territory -->
+    <article class="wiki-article" id="wiki-territory">
+      <h2>🗺️ コロニー一覧</h2>
+      <p>Elyona には目的・特徴の異なる5種類のコロニーが存在します。</p>
+
+      <div style="margin: 20px 0;">
+
+        <div class="territory-card" style="border-left: 3px solid var(--blue);">
+          <div class="territory-header">
+            <span class="territory-icon">🏛️</span>
+            <div>
+              <span class="territory-name">ネクサス・コロニー</span>
+              <div style="margin-top:4px;">
+                <span class="pill pill-blue">MIMICが直轄</span>
+                <span class="pill pill-green">初期スポーン地点</span>
+              </div>
+            </div>
+          </div>
+          <p class="territory-desc">
+            Elyona 最大の公共コロニー。全プレイヤーが最初にスポーンする出発点。
+            MIMIC の中枢施設・金融・居住・行政が集中する最も栄えた都市。
+            巨大ドーム・人工太陽・高層建築が立ち並ぶ近未来都市の外観。
+            <strong>土地は最も高額。</strong>
+          </p>
+        </div>
+
+        <div class="territory-card" style="border-left: 3px solid var(--teal);">
+          <div class="territory-header">
+            <span class="territory-icon">🏠</span>
+            <div>
+              <span class="territory-name">レジデンシャル・コロニー</span>
+              <div style="margin-top:4px;">
+                <span class="pill pill-teal">MIMIC管理</span>
+                <span class="pill pill-green">生活・居住向け</span>
+              </div>
+            </div>
+          </div>
+          <p class="territory-desc">
+            生活・居住に特化した中規模コロニー。ネクサスから分かれた区画を多数持つ。
+            生活需要・建築需要のプレイヤー向け。
+            宇宙を見下ろす住宅街エリアで、窓の外は宇宙空間。
+          </p>
+        </div>
+
+        <div class="territory-card" style="border-left: 3px solid var(--gold);">
+          <div class="territory-header">
+            <span class="territory-icon">🏭</span>
+            <div>
+              <span class="territory-name">インダストリアル・コロニー</span>
+              <div style="margin-top:4px;">
+                <span class="pill pill-gold">MIMIC管理</span>
+                <span class="pill pill-gold">加工・製造特化</span>
+              </div>
+            </div>
+          </div>
+          <p class="territory-desc">
+            加工・製造・産業に特化したコロニー。大型施設の建設が許可されている。
+            工場を構える製造業プレイヤーが集まる工業地帯。
+            パイプ・機械・煙突が立ち並ぶ重工業エリア。固定資産税は高め。
+          </p>
+        </div>
+
+        <div class="territory-card" style="border-left: 3px solid var(--purple);">
+          <div class="territory-header">
+            <span class="territory-icon">🌌</span>
+            <div>
+              <span class="territory-name">フロンティア・コロニー</span>
+              <div style="margin-top:4px;">
+                <span class="pill pill-purple">MIMIC管理（最小限）</span>
+                <span class="pill pill-gray">高自由度・低保護</span>
+              </div>
+            </div>
+          </div>
+          <p class="territory-desc">
+            未開拓・辺境のコロニー。MIMICのサービスは最小限で、
+            治安・インフラは住民が自分で整備する。
+            プレイヤー独自ルール・コミュニティ形成が最も活発な場所。
+            建設中のドームと広大な宇宙空間が広がる。
+          </p>
+        </div>
+
+        <div class="territory-card" style="border-left: 3px solid var(--red);">
+          <div class="territory-header">
+            <span class="territory-icon">🔑</span>
+            <div>
+              <span class="territory-name">プライベート・コロニー</span>
+              <div style="margin-top:4px;">
+                <span class="pill pill-red">プレイヤー所有</span>
+                <span class="pill pill-gold">上位目標</span>
+              </div>
+            </div>
+          </div>
+          <p class="territory-desc">
+            最上位プレイヤーが MIMIC からコロニーそのものを購入して統治する独自コロニー。
+            独自の税制・ルールを設定できるが、MIMIC の基本法は維持される。
+            Elyona における最大の経済的目標。
+          </p>
+        </div>
+
+      </div>
+
+      <h3>成長の軌跡</h3>
+      <div class="flow-chart">
+        <span class="flow-item">🏛️ ネクサスで出発</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">資金を貯める</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">🏠 居住・産業へ移住</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">🌌 フロンティアで独立</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-item">🔑 コロニー購入</span>
+      </div>
+    </article>
+
+    <!-- land -->
+    <article class="wiki-article" id="wiki-land">
+      <h2>🏗️ 土地購入ガイド</h2>
+
+      <h3>土地購入の手順</h3>
+      <ol style="padding-left: 20px; margin: 12px 0;">
+        <li style="margin-bottom: 8px; color: var(--text2);">
+          <strong style="color:var(--text);">購入したい区画を探す</strong>
+          — 各コロニーの未分譲エリアを確認。MIMIC の管理システムで空き区画を検索。
+        </li>
+        <li style="margin-bottom: 8px; color: var(--text2);">
+          <strong style="color:var(--text);">MIMIC に購入申請</strong>
+          — 対象区画を指定して購入手続き。価格はコロニーと位置によって変動。
+        </li>
+        <li style="margin-bottom: 8px; color: var(--text2);">
+          <strong style="color:var(--text);">所有権の登録</strong>
+          — MIMIC が所有権を自動登録。以降、その区画はあなたの土地として保護される。
+        </li>
+        <li style="color: var(--text2);">
+          <strong style="color:var(--text);">建築開始</strong>
+          — 区画内に自由に建設。他の区画への影響・はみ出しには注意。
+        </li>
+      </ol>
+
+      <h3>土地の費用</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>コロニー種別</th><th>土地価格（目安）</th><th>固定資産税</th><th>特徴</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ネクサス</td><td>高額</td><td>高</td><td>最も便利・高価値</td></tr>
+            <tr><td>レジデンシャル</td><td>中程度</td><td>中</td><td>生活向け・バランス型</td></tr>
+            <tr><td>インダストリアル</td><td>中〜高</td><td>高</td><td>大型施設向け</td></tr>
+            <tr><td>フロンティア</td><td>低額</td><td>低〜なし</td><td>自由度高・保護低</td></tr>
+            <tr><td>プライベート</td><td>コロニー丸ごと購入</td><td>特殊</td><td>上位プレイヤー向け</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box tbd">
+        🔧 <strong>未決定：</strong> 具体的な価格・税率は設計中です。
+      </div>
+
+      <h3>土地の没収・手放し</h3>
+      <ul>
+        <li>30日以上ログインなし + 税金未納 → MIMIC が没収</li>
+        <li>任意で MIMIC に返却（売却）することも可能</li>
+        <li>プレイヤー間での土地売却は MIMIC の仲介のもと可能</li>
+      </ul>
+    </article>
+
+    <!-- mimic -->
+    <article class="wiki-article" id="wiki-mimic">
+      <h2>🤖 MIMIC（統治AI）</h2>
+
+      <div class="info-box blue">
+        📡 <strong>正式名称：</strong> Managed Infrastructure &amp; Municipal Integration Controller
+      </div>
+
+      <h3>MIMICとは</h3>
+      <p>
+        第一次世界大戦末期、崩壊寸前の人類社会を維持するために開発された
+        <strong>超高度統治AI</strong>。感情・欲望・疲弊を持たない。
+        コロニーの秩序・経済・法律のすべてを管理する。
+      </p>
+      <p>
+        プレイヤーにとって MIMIC は<strong>「空気のような存在」</strong>——
+        見えないが、常にそこにいる。抗える手段は存在しない。
+      </p>
+
+      <div style="background: var(--bg3); border: 1px solid var(--border); border-left: 3px solid var(--text3); border-radius: 0 6px 6px 0; padding: 14px 18px; margin: 16px 0; font-family: var(--font-mono); font-size: 12px; color: var(--text2); line-height: 1.8;">
+        「区画 B-7 の土地取引が完了しました。所有権を登録します。以後、当該区画における構造物の建設・撤去はMIMICの管轄下に置かれます。税率 3% が適用されます。」
+        <div style="font-size: 10px; color: var(--text3); margin-top: 8px;">// MIMIC — 通知メッセージ（イメージ）</div>
+      </div>
+
+      <h3>MIMICの4大権限</h3>
+      <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0;">
+        <div class="card accent-blue">
+          <div style="font-size: 20px; margin-bottom: 6px;">🗺️</div>
+          <h3 style="font-size: 14px;">土地・コロニー管理</h3>
+          <p style="font-size: 13px; color: var(--text2); margin: 0;">区画の定義・分割・所有権登録・売買仲介。コロニーそのものの売却も管轄。</p>
+        </div>
+        <div class="card accent-teal">
+          <div style="font-size: 20px; margin-bottom: 6px;">🏛️</div>
+          <h3 style="font-size: 14px;">税務・公共サービス</h3>
+          <p style="font-size: 13px; color: var(--text2); margin: 0;">固定資産税・取引税の徴収。公共インフラの維持・拡張に充当。</p>
+        </div>
+        <div class="card accent-gold">
+          <div style="font-size: 20px; margin-bottom: 6px;">💰</div>
+          <h3 style="font-size: 14px;">経済・公定価格</h3>
+          <p style="font-size: 13px; color: var(--text2); margin: 0;">資源の公定買取・販売価格を設定。通貨の発行・管理。インフレ・デフレの制御。</p>
+        </div>
+        <div class="card accent-red">
+          <div style="font-size: 20px; margin-bottom: 6px;">⚖️</div>
+          <h3 style="font-size: 14px;">法律・制裁</h3>
+          <p style="font-size: 13px; color: var(--text2); margin: 0;">ルール違反の検知・制裁。警告→アクセス制限→追放・資産没収の段階制裁。</p>
+        </div>
+      </div>
+
+      <h3>MIMICが関与しないこと</h3>
+      <ul style="margin: 8px 0;">
+        <li><strong>プレイヤー間の自由取引</strong> — 店の価格・交渉・プレイヤー間契約は自由（取引税のみ徴収）</li>
+        <li><strong>建築物の内容</strong> — 区画の中に何を建てるかはプレイヤーの自由</li>
+        <li><strong>地球探索</strong> — 廃墟の地球はMIMICの管轄外。何が起きてもMIMICは動かない</li>
+      </ul>
+
+      <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top: 16px;">
+        <span class="pill pill-gray">無機質・冷徹</span>
+        <span class="pill pill-gray">公平・絶対的</span>
+        <span class="pill pill-gray">感情なし</span>
+        <span class="pill pill-blue">全権限保有</span>
+        <span class="pill pill-red">抗える手段なし</span>
+      </div>
+    </article>
+
+    <!-- currency -->
+    <article class="wiki-article" id="wiki-currency">
+      <h2>💴 通貨・経済詳細</h2>
+      <div class="info-box tbd">
+        🔧 <strong>この記事は未完成です。</strong> 通貨名・発行システム・インフレ対策などの詳細は現在設計中です。
+      </div>
+      <h3>決定済み事項</h3>
+      <ul>
+        <li>通貨は MIMIC が発行・管理する</li>
+        <li>MIMIC が資源の公定価格（買取・販売）を設定する</li>
+        <li>プレイヤーショップは自由価格で売買可能</li>
+        <li>取引には MIMIC が取引税を徴収する</li>
+        <li>土地保有には固定資産税が課される</li>
+      </ul>
+      <p style="margin-top: 16px; color: var(--text3); font-size: 13px;">
+        ※ 通貨の名称・単位・具体的なレートは今後公開予定です。
+      </p>
+    </article>
+
+  </main>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  Elyona World — Minecraft MMORPG Server &nbsp;|&nbsp; CONCEPT v1.0 &nbsp;|&nbsp; 2026
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script src="js/main.js"></script>
+</body>
+</html>
