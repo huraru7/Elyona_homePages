@@ -54,22 +54,25 @@ function wikiSearch(query) {
   });
 }
 
+// ---- News フィルター状態 ----
+let newsItems = [];
+let newsFilter = { year: 'all', category: 'all' };
+
 // ---- News 初期化 ----
 async function initNews() {
   const list = document.querySelector('.news-list');
   if (!list) return;
 
-  let items;
   try {
     const res = await fetch('news/index.json');
-    items = await res.json();
+    newsItems = await res.json();
   } catch {
     list.innerHTML = '<p style="color:var(--red)">お知らせを読み込めませんでした。</p>';
     return;
   }
 
-  list.innerHTML = items.map(item => `
-    <div class="news-card" onclick="toggleNews(this)" data-id="${item.id}">
+  list.innerHTML = newsItems.map(item => `
+    <div class="news-card" onclick="toggleNews(this)" data-id="${item.id}" data-year="${item.date.slice(0, 4)}" data-category="${item.category}">
       <div class="news-card-header">
         <div style="flex:1">
           <div class="news-meta">
@@ -84,6 +87,49 @@ async function initNews() {
       <div class="news-body"></div>
     </div>
   `).join('');
+
+  renderNewsFilters();
+  applyNewsFilter();
+}
+
+// ---- News フィルターボタン生成 ----
+function renderNewsFilters() {
+  const years = ['all', ...new Set(newsItems.map(i => i.date.slice(0, 4)))];
+  const cats  = ['all', ...new Set(newsItems.map(i => i.category))];
+
+  document.getElementById('news-year-filters').innerHTML =
+    years.map(y => `<button class="news-filter-btn${y === 'all' ? ' active' : ''}" onclick="setNewsFilter('year','${y}',this)">${y === 'all' ? 'すべて' : y + '年'}</button>`).join('');
+
+  document.getElementById('news-cat-filters').innerHTML =
+    cats.map(c => `<button class="news-filter-btn${c === 'all' ? ' active' : ''}" onclick="setNewsFilter('category','${c}',this)">${c === 'all' ? 'すべて' : c}</button>`).join('');
+}
+
+// ---- News フィルター切り替え ----
+function setNewsFilter(type, value, btn) {
+  newsFilter[type] = value;
+  btn.closest('.news-filter-group').querySelectorAll('.news-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyNewsFilter();
+}
+
+// ---- News フィルター適用 ----
+function applyNewsFilter() {
+  const q = (document.getElementById('news-search')?.value ?? '').toLowerCase().trim();
+  let visible = 0;
+
+  document.querySelectorAll('.news-card').forEach(card => {
+    const yearOk = newsFilter.year === 'all' || card.dataset.year === newsFilter.year;
+    const catOk  = newsFilter.category === 'all' || card.dataset.category === newsFilter.category;
+    const textOk = !q ||
+      card.querySelector('.news-title').textContent.toLowerCase().includes(q) ||
+      card.querySelector('.news-summary').textContent.toLowerCase().includes(q);
+
+    const show = yearOk && catOk && textOk;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+
+  document.getElementById('news-empty').style.display = visible === 0 ? '' : 'none';
 }
 
 // ---- News 本文読み込み ----

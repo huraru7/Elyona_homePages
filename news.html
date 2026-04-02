@@ -34,6 +34,19 @@
   <div class="page-title">📋 お知らせ</div>
   <div class="page-subtitle">サーバーに関する最新情報・アップデート情報はここで確認できます。</div>
 
+  <div class="news-filter-bar">
+    <input class="search-input" id="news-search" placeholder="タイトル・内容を検索..." oninput="applyNewsFilter()">
+    <div class="news-filter-row">
+      <span class="news-filter-label">年</span>
+      <div class="news-filter-group" id="news-year-filters"></div>
+    </div>
+    <div class="news-filter-row">
+      <span class="news-filter-label">カテゴリ</span>
+      <div class="news-filter-group" id="news-cat-filters"></div>
+    </div>
+  </div>
+  <div class="news-empty" id="news-empty" style="display:none">該当するお知らせがありません。</div>
+
   <div class="news-list"></div>
 </div>
 
