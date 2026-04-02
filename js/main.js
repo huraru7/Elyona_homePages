@@ -1,18 +1,43 @@
-// ---- Page Navigation ----
-function showPage(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
-  document.getElementById('nav-' + page).classList.add('active');
-  window.scrollTo(0, 0);
+// ---- marked.js セットアップ ----
+if (typeof marked !== 'undefined') {
+  const wikiRenderer = {
+    table(token) {
+      const header = token.header.map(h =>
+        `<th>${marked.parseInline(h.text)}</th>`
+      ).join('');
+      const rows = token.rows.map(row =>
+        '<tr>' + row.map(cell =>
+          `<td>${marked.parseInline(cell.text)}</td>`
+        ).join('') + '</tr>'
+      ).join('');
+      return `<div class="table-wrap"><table><thead><tr>${header}</tr></thead><tbody>${rows}</tbody></table></div>`;
+    }
+  };
+  marked.use({ renderer: wikiRenderer });
 }
 
 // ---- Wiki Navigation ----
-function showWiki(article) {
-  document.querySelectorAll('.wiki-article').forEach(a => a.classList.remove('active'));
+const wikiCache = {};
+
+async function showWiki(article, btn) {
   document.querySelectorAll('.wiki-nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('wiki-' + article).classList.add('active');
-  event.currentTarget.classList.add('active');
+  if (btn) btn.classList.add('active');
+
+  const display = document.getElementById('wiki-display');
+  if (!display) return;
+
+  if (!wikiCache[article]) {
+    display.innerHTML = '<p style="color:var(--text3)">読み込み中...</p>';
+    try {
+      const res = await fetch('wiki/' + article + '.md');
+      if (!res.ok) throw new Error('404');
+      wikiCache[article] = await res.text();
+    } catch {
+      display.innerHTML = '<p style="color:var(--red)">記事を読み込めませんでした。</p>';
+      return;
+    }
+  }
+  display.innerHTML = marked.parse(wikiCache[article]);
 }
 
 // ---- Wiki Search ----
@@ -29,16 +54,66 @@ function wikiSearch(query) {
   });
 }
 
+// ---- News 初期化 ----
+async function initNews() {
+  const list = document.querySelector('.news-list');
+  if (!list) return;
+
+  let items;
+  try {
+    const res = await fetch('news/index.json');
+    items = await res.json();
+  } catch {
+    list.innerHTML = '<p style="color:var(--red)">お知らせを読み込めませんでした。</p>';
+    return;
+  }
+
+  list.innerHTML = items.map(item => `
+    <div class="news-card" onclick="toggleNews(this)" data-id="${item.id}">
+      <div class="news-card-header">
+        <div style="flex:1">
+          <div class="news-meta">
+            <span class="news-date">${item.date}</span>
+            <span class="pill pill-${item.categoryColor}">${item.category}</span>
+          </div>
+          <div class="news-title">${item.title}</div>
+          <div class="news-summary">${item.summary}</div>
+        </div>
+        <span class="news-chevron">▼</span>
+      </div>
+      <div class="news-body"></div>
+    </div>
+  `).join('');
+}
+
+// ---- News 本文読み込み ----
+async function loadNewsBody(card) {
+  const id = card.dataset.id;
+  const body = card.querySelector('.news-body');
+  if (!id || body.dataset.loaded) return;
+
+  try {
+    const res = await fetch('news/' + id + '.md');
+    if (!res.ok) throw new Error('404');
+    const md = await res.text();
+    body.innerHTML = marked.parse(md);
+    body.dataset.loaded = '1';
+  } catch {
+    body.innerHTML = '<p style="color:var(--red)">本文を読み込めませんでした。</p>';
+    body.dataset.loaded = '1';
+  }
+}
+
 // ---- News Toggle ----
-function toggleNews(card) {
+async function toggleNews(card) {
   const body = card.querySelector('.news-body');
   const isOpen = card.classList.contains('expanded');
-  // Close all
   document.querySelectorAll('.news-card').forEach(c => {
     c.classList.remove('expanded');
     c.querySelector('.news-body').classList.remove('open');
   });
   if (!isOpen) {
+    await loadNewsBody(card);
     card.classList.add('expanded');
     body.classList.add('open');
   }
@@ -53,11 +128,3 @@ function copyAddr() {
     setTimeout(() => btn.textContent = 'コピー', 1500);
   });
 }
-
-// ---- URL Hash Navigation ----
-window.addEventListener('load', () => {
-  const hash = location.hash.slice(1);
-  if (hash && document.getElementById('page-' + hash)) {
-    showPage(hash);
-  }
-});

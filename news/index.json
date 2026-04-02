@@ -1,0 +1,26 @@
+[
+  {
+    "id": "2026-04-01-v8",
+    "date": "2026-04-01",
+    "title": "コンセプトドキュメント v8.0 公開（全項目確定）",
+    "summary": "Serath・二次産業・イベント・チュートリアルなど全項目が確定。Phase 5（技術・リリース準備）へ移行。",
+    "category": "サーバー情報",
+    "categoryColor": "blue"
+  },
+  {
+    "id": "2026-03-31-v1",
+    "date": "2026-03-31",
+    "title": "コンセプトドキュメント v1.0 公開",
+    "summary": "Elyona World のサーバーコンセプト・世界観・ゲームプレイ設計の第1版を公開しました。",
+    "category": "サーバー情報",
+    "categoryColor": "blue"
+  },
+  {
+    "id": "2026-03-31-launch",
+    "date": "2026-03-31",
+    "title": "Elyona World 企画始動のお知らせ",
+    "summary": "Minecraft MMORPG 生活サーバー「Elyona World」の企画が正式に始動しました。",
+    "category": "アナウンス",
+    "categoryColor": "green"
+  }
+]
