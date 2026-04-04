@@ -34,14 +34,167 @@
 
 ### 超技術アイテム（レアリティ）
 
-| レアリティ | 入手場所 | MIMIC最低保証価格 |
-|---|---|---|
-| <span class="pill pill-gray">Common</span> | 廃墟都市跡 | Cr 500〜 |
-| <span class="pill pill-blue">Uncommon</span> | 研究施設・浅層 | Cr 2,000〜 |
-| <span class="pill pill-purple">Rare</span> | 研究施設・深層 | Cr 8,000〜 |
-| <span class="pill pill-gold">Epic</span> | 墜落船・外殻部 | Cr 25,000〜 |
-| <span class="pill pill-red">Legendary</span> | 墜落船・中枢部のみ | Cr 100,000〜 |
+| レアリティ | 入手場所 | MIMIC買取価格 | 備考 |
+|---|---|---|---|
+| <span class="pill pill-gray">Common</span> | 廃墟都市跡 | Cr 500〜 | — |
+| <span class="pill pill-blue">Uncommon</span> | 研究施設・浅層 | Cr 2,000〜 | — |
+| <span class="pill pill-purple">Rare</span> | 研究施設・深層 | Cr 8,000〜 | — |
+| <span class="pill pill-gold">Epic</span> | 墜落船・外殻部 | Cr 25,000〜 | — |
+| <span class="pill pill-red">Legendary</span> | 墜落船・中枢部のみ | Cr 100,000〜 | 1リセットで数個 |
+| <span class="pill pill-red">**Mythic**</span> | 非公開 | 非公開 | シークレット。存在自体が非公開。MIMICが「記録にない」と返答するのみ |
+
+### アイテムの種類
+
+| 種類 | 説明 |
+|---|---|
+| 装備型 | 装備スロットに入れるだけで効果が常時発動。耐久度があるものは使い続けると壊れる。永続（耐久度なし）のものも存在 |
+| 消費型 | 使用すると一定時間だけ効果が発動し、アイテムは消える。レアリティが高いほど効果時間・強度が上がる |
+
+### カテゴリ一覧（全6カテゴリ・26アイテム）
+
+**① 移動系（5アイテム）**
+
+| レアリティ | 種別 | アイテム名 | 効果 | 耐久 |
+|---|---|---|---|---|
+| <span class="pill pill-gray">Common</span> | 装備 | 速度増強バイス・I | 移動速度+30% | あり |
+| <span class="pill pill-blue">Uncommon</span> | 装備 | 速度増強バイス・II | 移動速度+100% | あり |
+| <span class="pill pill-purple">Rare</span> | 装備 | 跳躍強化システム | 移動速度+50%・ジャンプ強化 | 永続 |
+| <span class="pill pill-gold">Epic</span> | 装備 | 姿勢制御ユニット | 移動速度+200%・落下ダメージ無効 | 永続 |
+| <span class="pill pill-red">Legendary</span> | 装備 | 位相跳躍補助装置 | 移動速度+400%・ジャンプ強化・落下無効・水中移動強化 | 永続 |
+
+**② 戦闘系（6アイテム）**
+
+| レアリティ | 種別 | アイテム名 | 効果 | 耐久 |
+|---|---|---|---|---|
+| <span class="pill pill-gray">Common</span> | 装備 | 戦闘補助バッジ・I | 攻撃力+15% | あり |
+| <span class="pill pill-blue">Uncommon</span> | 装備 | 防護フィールド発生装置 | 防御力+20%・ノックバック耐性 | あり |
+| <span class="pill pill-purple">Rare</span> | 装備 | 耐熱外骨格システム | 火炎・爆発ダメージ-50% | 永続 |
+| <span class="pill pill-purple">Rare</span> | 消費 | 戦闘覚醒剤 | 攻撃力+40%・移動速度+20%（5分間）使用後に速度低下 | 使い切り |
+| <span class="pill pill-gold">Epic</span> | 装備 | 全領域戦闘補助システム | 攻撃力+35%・防御力+35%・耐熱 | 永続 |
+| <span class="pill pill-red">Legendary</span> | 装備 | 超兵士強化スーツ | 攻撃力+80%・防御力+60%・耐熱・移動速度+50% | 永続 |
+
+**③ 感知系（4アイテム）**
+
+| レアリティ | 種別 | アイテム名 | 効果 | 耐久 |
+|---|---|---|---|---|
+| <span class="pill pill-gray">Common</span> | 装備 | 暗視ゴーグル | 暗所での視界確保 | あり |
+| <span class="pill pill-blue">Uncommon</span> | 装備 | 生体反応スキャナー | 周辺の敵mobの位置を感知 | あり |
+| <span class="pill pill-purple">Rare</span> | 消費 | 広域スキャンパルス | 半径50ブロック内の全mob・宝箱の位置を10秒間表示 | 使い切り |
+| <span class="pill pill-gold">Epic</span> | 装備 | 戦術予測システム | 常時スキャン・敵の動き読み・暗視複合 | 永続 |
+
+**④ 採掘・採取系（4アイテム）**
+
+| レアリティ | 種別 | アイテム名 | 効果 | 耐久 |
+|---|---|---|---|---|
+| <span class="pill pill-gray">Common</span> | 装備 | 採掘強化グローブ | 採掘速度+40% | あり |
+| <span class="pill pill-blue">Uncommon</span> | 装備 | 資源圧縮モジュール | インベントリ内の各種アイテムを自動スタック圧縮 | 永続 |
+| <span class="pill pill-purple">Rare</span> | 装備 | 採掘増幅装置 | 採掘速度+120%・レアドロップ率+15% | 永続 |
+| <span class="pill pill-gold">Epic</span> | 消費 | 精密解析薬 | 周辺3×3×3範囲を採掘・ドロップ率2倍 | 使い切り |
+
+**⑤ 生存・回復系（4アイテム）**
+
+| レアリティ | 種別 | アイテム名 | 効果 | 耐久 |
+|---|---|---|---|---|
+| <span class="pill pill-gray">Common</span> | 消費 | 応急医療パック | HP即時回復（中程度） | 使い切り |
+| <span class="pill pill-blue">Uncommon</span> | 装備 | 自動再生システム | HP自動回復速度+50% | あり |
+| <span class="pill pill-purple">Rare</span> | 消費 | 高速治癒剤 | HP即時全回復・60秒間HP自動回復 | 使い切り |
+| <span class="pill pill-gold">Epic</span> | 装備 | 完全生命維持装置 | HP自動回復速度+200%・飢え無効 | 永続 |
+
+**⑥ 特殊・複合系（3アイテム）**
+
+| レアリティ | 種別 | アイテム名 | 効果 | 耐久 |
+|---|---|---|---|---|
+| <span class="pill pill-purple">Rare</span> | 消費 | 重力制御牽引 | 周辺の敵を引き寄せてまとめてダメージ | 使い切り |
+| <span class="pill pill-gold">Epic</span> | 装備 | 時間圧縮フィールド | 近接する敵の移動・攻撃を30%スロー | あり |
+| <span class="pill pill-red">Legendary</span> | 装備 | 統合戦闘制御システム「ARES」 | 全能力+50%・常時スキャン・自動回復・移動速度+100%。1シーズンに数個のみ | 永続 |
+
+---
+
+### 品質システム
+
+同じアイテムでも**品質（0〜100）**によって効果の強さが異なります。吟味要素として機能し、プレイヤー間取引にも深みを生みます。
+
+**計算式**
+```
+効果値 = 最小値 + (最大値 - 最小値) × (品質 / 100)
+例：速度増強バイス・I（+10〜+30%）、品質73
+  → 10 + (30 - 10) × 0.73 = 24.6% → +25%
+```
+
+**レアリティ別の品質出現傾向**
+
+| レアリティ | 品質の出やすい範囲 |
+|---|---|
+| Common / Uncommon | 10〜60 に集中 |
+| Rare / Epic | 30〜80 に集中 |
+| Legendary | 60〜100 に集中 |
+| Mythic | 常に100（振れ幅なし） |
+
+**ゲーム内表示イメージ**
+```
+速度増強バイス・I
+★ Rare
+─────────────────
+移動速度 +25%
+耐久度: 247 / 300
+─────────────────
+品質: 73 / 100
+大戦時代の歩兵用補助装備の残骸。
+かろうじて機能する。機能は健在だ
+```
+
+**品質とMIMIC買取価格の関係**  
+同じアイテムでも品質が高いほど買取価格が高くなります。プレイヤー間取引でも品質は価値の指標になります。
 
 <div class="info-box tbd">
-🔧 <strong>未決定：</strong> 超技術アイテムの具体的な効果・バランスは設計中です。
+🔧 <strong>実装メモ（Phase 7）：</strong> NBTタグに品質値（0〜100）を書き込み、Skriptで品質値を読み取り効果を動的計算・適用。アイテムのloreに品質・効果値を表示。既存プラグイン（MMOItemsなど）の拡張として実装予定。
+</div>
+
+---
+
+## 🏅 ランクシステム
+
+ダンジョンクリアで経験値を獲得し、ランクが上がっていくシーズン制のシステムです。
+
+### シーズン制
+
+- 1シーズン＝一定期間（例：3ヶ月）
+- シーズン終了時にランクがリセットされ、全員が **Bronze** から再スタート
+- シーズン開始・終了は MIMIC が告知する
+
+### ランク6段階
+
+| ランク | 位置づけ | ランクアップ報酬 |
+|---|---|---|
+| <span class="pill pill-gray">Bronze</span> | 入門。ダンジョンに足を踏み入れたばかりの探索者 | 称号「鉄の探索者」解放 |
+| <span class="pill pill-blue">Silver</span> | 慣れた探索者。地球のダンジョンをひと通りこなせる | Cr報酬 + 限定称号 |
+| <span class="pill pill-gold">Gold</span> | 中堅。Serathへの挑戦が現実的になる実力 | Cr報酬 + 限定称号 |
+| <span class="pill pill-teal">Platinum</span> | 上位層。Serathの恒常ダンジョンを攻略できる | Cr報酬 + 限定称号 |
+| <span class="pill pill-purple">Diamond</span> | 精鋭。Serathのマルチ推奨ダンジョンも制覇できる | Cr報酬 + 希少称号 |
+| <span class="pill pill-red">Legend</span> | 最高位。Elyonaのシーズンで頂点を極めた存在 | 伝説称号 + 大量Cr |
+
+### 経験値・報酬
+
+**経験値の獲得方法**
+- **ダンジョンクリアのみ**で経験値を獲得
+- 難易度の高いダンジョンほど多くの経験値が得られる
+- 探索・経済活動・建築ではランク経験値は得られない
+
+**報酬の2種類**
+
+| 種類 | タイミング | 内容 |
+|---|---|---|
+| 経験値報酬 | 経験値が上がるたびに | Cr・アイテムなどの小さな報酬 |
+| ランクアップ報酬 | ランクが上がった時点で | Cr・限定称号・限定アイテムなどの大きな報酬 |
+
+### 確認方法
+
+`/rank` コマンドで専用メニューを開く。以下の情報を確認できます。
+
+- 自分の現在ランク・累計経験値・次のランクまでの残り経験値
+- ランク別の実績履歴
+- 他プレイヤーのランク
+
+<div class="info-box blue">
+📊 <strong>表示について：</strong> ランクはプレイヤーネームには表示されません。専用メニュー（<code>/rank</code>）でのみ確認できます。
 </div>
