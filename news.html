@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>お知らせ | Elyona World</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お知らせ | Elyona World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- ============================================================
-     NAVIGATION
-     ============================================================ -->
-<nav>
-  <span class="nav-logo" onclick="location.href='index.html'">Elyona<span>World</span></span>
-  <div class="nav-links">
-    <button class="nav-btn" onclick="location.href='index.html'">ホーム</button>
-    <button class="nav-btn active" onclick="location.href='news.html'">お知らせ</button>
-    <button class="nav-btn" onclick="location.href='rules.html'">ルール</button>
-    <button class="nav-btn" onclick="location.href='wiki.html'">サーバー紹介 / Wiki</button>
-  </div>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    <span>ONLINE</span>
-  </div>
-</nav>
-
-<!-- ============================================================
-     PAGE: NEWS
-     ============================================================ -->
-<div class="container">
-  <div class="page-title">📋 お知らせ</div>
-  <div class="page-subtitle">サーバーに関する最新情報・アップデート情報はここで確認できます。</div>
-
-  <div class="news-filter-bar">
-    <input class="search-input" id="news-search" placeholder="タイトル・内容を検索..." oninput="applyNewsFilter()">
-    <div class="news-filter-row">
-      <span class="news-filter-label">年</span>
-      <div class="news-filter-group" id="news-year-filters"></div>
+  <nav>
+    <span class="nav-logo" onclick="location.href='index.html'">Elyona<span>World</span></span>
+    <div class="nav-links">
+      <button class="nav-btn" onclick="location.href='index.html'">ホーム</button>
+      <button class="nav-btn active" onclick="location.href='news.html'">お知らせ</button>
+      <button class="nav-btn" onclick="location.href='rules.html'">ルール</button>
+      <button class="nav-btn" onclick="location.href='wiki.html'">サーバー紹介 / Wiki</button>
     </div>
-    <div class="news-filter-row">
-      <span class="news-filter-label">カテゴリ</span>
-      <div class="news-filter-group" id="news-cat-filters"></div>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>ONLINE</span>
     </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-title">📋 お知らせ</div>
+    <div class="page-subtitle">サーバーに関する最新情報・アップデート情報はここで確認できます。</div>
+
+    <div class="news-filter-bar">
+      <input class="search-input" id="news-search" placeholder="タイトル・内容を検索..." oninput="applyNewsFilter()">
+      <div class="news-filter-row">
+        <span class="news-filter-label">年</span>
+        <div class="news-filter-group" id="news-year-filters"></div>
+      </div>
+      <div class="news-filter-row">
+        <span class="news-filter-label">カテゴリ</span>
+        <div class="news-filter-group" id="news-cat-filters"></div>
+      </div>
+    </div>
+    <div class="news-empty" id="news-empty" style="display:none">該当するお知らせがありません。</div>
+
+    <div class="news-list"></div>
   </div>
-  <div class="news-empty" id="news-empty" style="display:none">該当するお知らせがありません。</div>
 
-  <div class="news-list"></div>
-</div>
+  <footer class="site-footer">
+    Elyona World — Minecraft MMORPG Server &nbsp;|&nbsp; CONCEPT v8.0 &nbsp;|&nbsp; 2026
+  </footer>
 
-<!-- Footer -->
-<footer class="site-footer">
-  Elyona World — Minecraft MMORPG Server &nbsp;|&nbsp; CONCEPT v8.0 &nbsp;|&nbsp; 2026
-</footer>
-
-<script src="js/marked.min.js"></script>
-<script src="js/main.js"></script>
-<script>
-  initNews();
-</script>
+  <script src="js/marked.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    initNews();
+  </script>
 </body>
+
 </html>

@@ -1,134 +1,129 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elyona World — Minecraft Server</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elyona World — Minecraft Server</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
 
-<!-- ============================================================
-     NAVIGATION
-     ============================================================ -->
-<nav>
-  <span class="nav-logo" onclick="location.href='index.html'">Elyona<span>World</span></span>
-  <div class="nav-links">
-    <button class="nav-btn active" onclick="location.href='index.html'">ホーム</button>
-    <button class="nav-btn" onclick="location.href='news.html'">お知らせ</button>
-    <button class="nav-btn" onclick="location.href='rules.html'">ルール</button>
-    <button class="nav-btn" onclick="location.href='wiki.html'">サーバー紹介 / Wiki</button>
-  </div>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    <span>ONLINE</span>
-  </div>
-</nav>
+  <nav>
+    <span class="nav-logo" onclick="location.href='index.html'">Elyona<span>World</span></span>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="location.href='index.html'">ホーム</button>
+      <button class="nav-btn" onclick="location.href='news.html'">お知らせ</button>
+      <button class="nav-btn" onclick="location.href='rules.html'">ルール</button>
+      <button class="nav-btn" onclick="location.href='wiki.html'">サーバー紹介 / Wiki</button>
+    </div>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>ONLINE</span>
+    </div>
+  </nav>
 
-<!-- ============================================================
-     PAGE: HOME
-     ============================================================ -->
-<div class="container">
+  <div class="container">
 
-  <!-- Hero -->
-  <div class="hero">
-    <p class="hero-eyebrow">// MINECRAFT MMORPG SERVER</p>
-    <h1>Elyona World</h1>
-    <p class="hero-desc">
-      現実と並走する、もうひとつの人生。<br>
-      宇宙コロニーを舞台にした MMORPG 生活サーバー。
-      探索・生活・経済、すべての楽しみ方があなたを待っている。
-    </p>
-    <div class="join-box">
-      <div>
-        <div class="join-label">サーバーアドレス</div>
-        <div class="join-addr" id="server-addr">play.elyona.example</div>
+    <!-- Hero -->
+    <div class="hero">
+      <p class="hero-eyebrow">// MINECRAFT MMORPG SERVER</p>
+      <h1>Elyona World</h1>
+      <p class="hero-desc">
+        現実と並走する、もうひとつの人生。<br>
+        宇宙コロニーを舞台にした MMORPG 生活サーバー。
+        探索・生活・経済、すべての楽しみ方があなたを待っている。
+      </p>
+      <div class="join-box">
+        <div>
+          <div class="join-label">サーバーアドレス</div>
+          <div class="join-addr" id="server-addr">play.elyona.example</div>
+        </div>
+        <button class="copy-btn" onclick="copyAddr()">コピー</button>
       </div>
-      <button class="copy-btn" onclick="copyAddr()">コピー</button>
     </div>
-  </div>
 
-  <!-- Quick Info -->
-  <p class="section-label">サーバーについて</p>
-  <div class="card-grid card-grid-3" style="margin-bottom: 32px;">
-    <div class="card accent-blue quick-card">
-      <div>
-        <div class="quick-icon">🚀</div>
-        <h3>地球探索</h3>
-        <p>廃墟となった地球でダンジョンを攻略し、超技術アイテムを発掘しよう。採取した資源がすべての起点になる。</p>
+    <p class="section-label">サーバーについて</p>
+    <div class="card-grid card-grid-3" style="margin-bottom: 32px;">
+      <div class="card accent-blue quick-card">
+        <div>
+          <div class="quick-icon">🚀</div>
+          <h3>地球探索</h3>
+          <p>廃墟となった地球でダンジョンを攻略し、超技術アイテムを発掘しよう。採取した資源がすべての起点になる。</p>
+        </div>
+      </div>
+      <div class="card accent-teal quick-card">
+        <div>
+          <div class="quick-icon">🏙️</div>
+          <h3>コロニー生活</h3>
+          <p>宇宙コロニーの一員として、土地を購入し家や店を建設。職業・経済・コミュニティで充実した第2の人生を。</p>
+        </div>
+      </div>
+      <div class="card accent-gold quick-card">
+        <div>
+          <div class="quick-icon">💹</div>
+          <h3>プレイヤー経済</h3>
+          <p>資源を採取→加工→販売。資産を積み上げてコロニーを購入し、Elyona最大の地主を目指せ。</p>
+        </div>
       </div>
     </div>
-    <div class="card accent-teal quick-card">
-      <div>
-        <div class="quick-icon">🏙️</div>
-        <h3>コロニー生活</h3>
-        <p>宇宙コロニーの一員として、土地を購入し家や店を建設。職業・経済・コミュニティで充実した第2の人生を。</p>
-      </div>
-    </div>
-    <div class="card accent-gold quick-card">
-      <div>
-        <div class="quick-icon">💹</div>
-        <h3>プレイヤー経済</h3>
-        <p>資源を採取→加工→販売。資産を積み上げてコロニーを購入し、Elyona最大の地主を目指せ。</p>
-      </div>
-    </div>
-  </div>
 
-  <!-- Server Stats -->
-  <p class="section-label">サーバー情報</p>
-  <div class="card" style="margin-bottom: 32px;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
-      <div>
-        <div class="section-label" style="margin-bottom: 4px;">バージョン</div>
-        <div style="font-family: var(--font-mono); font-size: 15px;">Java 1.21</div>
-      </div>
-      <div>
-        <div class="section-label" style="margin-bottom: 4px;">プレイヤー数</div>
-        <div style="font-family: var(--font-mono); font-size: 15px; color: var(--green);">0 / 50</div>
-      </div>
-      <div>
-        <div class="section-label" style="margin-bottom: 4px;">ステータス</div>
-        <div style="font-family: var(--font-mono); font-size: 15px; color: var(--gold);">開発中</div>
-      </div>
-      <div>
-        <div class="section-label" style="margin-bottom: 4px;">ジャンル</div>
-        <div style="font-size: 14px;">MMORPG 生活サーバー</div>
+    <p class="section-label">サーバー情報</p>
+    <div class="card" style="margin-bottom: 32px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
+        <div>
+          <div class="section-label" style="margin-bottom: 4px;">バージョン</div>
+          <div style="font-family: var(--font-mono); font-size: 15px;">Java 1.21</div>
+        </div>
+        <div>
+          <div class="section-label" style="margin-bottom: 4px;">プレイヤー数</div>
+          <div style="font-family: var(--font-mono); font-size: 15px; color: var(--green);">0 / 50</div>
+        </div>
+        <div>
+          <div class="section-label" style="margin-bottom: 4px;">ステータス</div>
+          <div style="font-family: var(--font-mono); font-size: 15px; color: var(--gold);">開発中</div>
+        </div>
+        <div>
+          <div class="section-label" style="margin-bottom: 4px;">ジャンル</div>
+          <div style="font-size: 14px;">MMORPG 生活サーバー</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Latest News -->
-  <p class="section-label">最新のお知らせ</p>
-  <div class="card home-news">
-    <div class="news-item-mini" onclick="location.href='news.html'">
-      <div class="news-date-mini">2026-04-01</div>
-      <div>
-        <div class="news-item-title">コンセプトドキュメント v8.0 公開（全項目確定）</div>
-        <div class="news-item-cat">📋 サーバー情報</div>
+    <p class="section-label">最新のお知らせ</p>
+    <div class="card home-news">
+      <div class="news-item-mini" onclick="location.href='news.html'">
+        <div class="news-date-mini">2026-04-01</div>
+        <div>
+          <div class="news-item-title">コンセプトドキュメント v8.0 公開（全項目確定）</div>
+          <div class="news-item-cat">📋 サーバー情報</div>
+        </div>
+      </div>
+      <div class="news-item-mini" onclick="location.href='news.html'">
+        <div class="news-date-mini">2026-03-31</div>
+        <div>
+          <div class="news-item-title">Elyona World 企画始動のお知らせ</div>
+          <div class="news-item-cat">🎉 アナウンス</div>
+        </div>
+      </div>
+      <div style="padding-top: 14px; text-align: right;">
+        <a href="news.html" style="font-size: 13px;">すべてのお知らせを見る →</a>
       </div>
     </div>
-    <div class="news-item-mini" onclick="location.href='news.html'">
-      <div class="news-date-mini">2026-03-31</div>
-      <div>
-        <div class="news-item-title">Elyona World 企画始動のお知らせ</div>
-        <div class="news-item-cat">🎉 アナウンス</div>
-      </div>
-    </div>
-    <div style="padding-top: 14px; text-align: right;">
-      <a href="news.html" style="font-size: 13px;">すべてのお知らせを見る →</a>
-    </div>
+
   </div>
 
-</div>
+  <footer class="site-footer">
+    Elyona World — Minecraft MMORPG Server &nbsp;|&nbsp; CONCEPT v8.0 &nbsp;|&nbsp; 2026
+  </footer>
 
-<!-- Footer -->
-<footer class="site-footer">
-  Elyona World — Minecraft MMORPG Server &nbsp;|&nbsp; CONCEPT v8.0 &nbsp;|&nbsp; 2026
-</footer>
-
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

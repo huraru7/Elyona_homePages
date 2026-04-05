@@ -1,82 +1,83 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>サーバー紹介 / Wiki | Elyona World</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サーバー紹介 / Wiki | Elyona World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- ============================================================
-     NAVIGATION
-     ============================================================ -->
-<nav>
-  <span class="nav-logo" onclick="location.href='index.html'">Elyona<span>World</span></span>
-  <div class="nav-links">
-    <button class="nav-btn" onclick="location.href='index.html'">ホーム</button>
-    <button class="nav-btn" onclick="location.href='news.html'">お知らせ</button>
-    <button class="nav-btn" onclick="location.href='rules.html'">ルール</button>
-    <button class="nav-btn active" onclick="location.href='wiki.html'">サーバー紹介 / Wiki</button>
+  <nav>
+    <span class="nav-logo" onclick="location.href='index.html'">Elyona<span>World</span></span>
+    <div class="nav-links">
+      <button class="nav-btn" onclick="location.href='index.html'">ホーム</button>
+      <button class="nav-btn" onclick="location.href='news.html'">お知らせ</button>
+      <button class="nav-btn" onclick="location.href='rules.html'">ルール</button>
+      <button class="nav-btn active" onclick="location.href='wiki.html'">サーバー紹介 / Wiki</button>
+    </div>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>ONLINE</span>
+    </div>
+  </nav>
+
+  <div class="wiki-layout">
+
+    <!-- Sidebar -->
+    <aside class="wiki-sidebar">
+      <div class="wiki-sidebar-title">サーバー紹介 / Wiki</div>
+      <input class="search-input" placeholder="記事を検索..." oninput="wikiSearch(this.value)"
+        style="font-size:12px; padding: 7px 12px; margin-bottom: 12px;">
+
+      <div class="wiki-cat-label">プレイヤーガイド</div>
+      <button class="wiki-nav-btn active" onclick="showWiki('overview', this)">サーバー概要</button>
+      <button class="wiki-nav-btn" onclick="showWiki('worldlore', this)">世界設定・ロア</button>
+      <button class="wiki-nav-btn" onclick="showWiki('start', this)">はじめかた</button>
+
+      <div class="wiki-cat-label">機能</div>
+      <button class="wiki-nav-btn" onclick="showWiki('explore', this)">地球探索</button>
+      <button class="wiki-nav-btn" onclick="showWiki('serath', this)">Serath（エンドコンテンツ）</button>
+      <button class="wiki-nav-btn" onclick="showWiki('colony', this)">コロニー生活</button>
+      <button class="wiki-nav-btn" onclick="showWiki('industry', this)">二次産業（加工業）</button>
+      <button class="wiki-nav-btn" onclick="showWiki('economy', this)">経済システム</button>
+
+      <div class="wiki-cat-label">コロニー</div>
+      <button class="wiki-nav-btn" onclick="showWiki('territory', this)">コロニー一覧</button>
+      <button class="wiki-nav-btn" onclick="showWiki('land', this)">区画購入ガイド</button>
+
+      <div class="wiki-cat-label">経済</div>
+      <button class="wiki-nav-btn" onclick="showWiki('mimic', this)">MIMIC（統治AI）</button>
+      <button class="wiki-nav-btn" onclick="showWiki('currency', this)">通貨 Cred（Cr）</button>
+      <button class="wiki-nav-btn" onclick="showWiki('movement', this)">移動システム</button>
+
+      <div class="wiki-cat-label">イベント</div>
+      <button class="wiki-nav-btn" onclick="showWiki('events', this)">イベントシステム</button>
+
+    </aside>
+
+    <main class="wiki-content">
+      <article class="wiki-article active" id="wiki-display">
+        <p style="color:var(--text3)">読み込み中...</p>
+      </article>
+    </main>
   </div>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    <span>ONLINE</span>
-  </div>
-</nav>
 
-<!-- ============================================================
-     PAGE: WIKI
-     ============================================================ -->
-<div class="wiki-layout">
+  <footer class="site-footer">
+    Elyona World — Minecraft MMORPG Server &nbsp;|&nbsp; CONCEPT v8.0 &nbsp;|&nbsp; 2026
+  </footer>
 
-  <!-- Sidebar -->
-  <aside class="wiki-sidebar">
-    <div class="wiki-sidebar-title">サーバー紹介 / Wiki</div>
-    <input class="search-input" placeholder="記事を検索..." oninput="wikiSearch(this.value)" style="font-size:12px; padding: 7px 12px; margin-bottom: 12px;">
-
-    <div class="wiki-cat-label">概要</div>
-    <button class="wiki-nav-btn active" onclick="showWiki('overview', this)">サーバー概要</button>
-    <button class="wiki-nav-btn" onclick="showWiki('worldlore', this)">世界設定・ロア</button>
-    <button class="wiki-nav-btn" onclick="showWiki('start', this)">はじめかた</button>
-
-    <div class="wiki-cat-label">ゲームプレイ</div>
-    <button class="wiki-nav-btn" onclick="showWiki('explore', this)">地球探索</button>
-    <button class="wiki-nav-btn" onclick="showWiki('serath', this)">Serath（エンドコンテンツ）</button>
-    <button class="wiki-nav-btn" onclick="showWiki('colony', this)">コロニー生活</button>
-    <button class="wiki-nav-btn" onclick="showWiki('industry', this)">二次産業（加工業）</button>
-    <button class="wiki-nav-btn" onclick="showWiki('economy', this)">経済システム</button>
-
-    <div class="wiki-cat-label">コロニー</div>
-    <button class="wiki-nav-btn" onclick="showWiki('territory', this)">コロニー一覧</button>
-    <button class="wiki-nav-btn" onclick="showWiki('land', this)">区画購入ガイド</button>
-
-    <div class="wiki-cat-label">システム</div>
-    <button class="wiki-nav-btn" onclick="showWiki('mimic', this)">MIMIC（統治AI）</button>
-    <button class="wiki-nav-btn" onclick="showWiki('currency', this)">通貨 Cred（Cr）</button>
-    <button class="wiki-nav-btn" onclick="showWiki('events', this)">イベントシステム</button>
-    <button class="wiki-nav-btn" onclick="showWiki('movement', this)">移動システム</button>
-  </aside>
-
-  <!-- Wiki Content -->
-  <main class="wiki-content">
-    <article class="wiki-article active" id="wiki-display">
-      <p style="color:var(--text3)">読み込み中...</p>
-    </article>
-  </main>
-</div>
-
-<!-- Footer -->
-<footer class="site-footer">
-  Elyona World — Minecraft MMORPG Server &nbsp;|&nbsp; CONCEPT v8.0 &nbsp;|&nbsp; 2026
-</footer>
-
-<script src="js/marked.min.js"></script>
-<script src="js/main.js"></script>
-<script>
-  showWiki('overview', document.querySelector('.wiki-nav-btn.active'));
-</script>
+  <script src="js/marked.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    showWiki('overview', document.querySelector('.wiki-nav-btn.active'));
+  </script>
 </body>
+
 </html>
