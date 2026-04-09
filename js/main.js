@@ -16,6 +16,33 @@ if (typeof marked !== 'undefined') {
   marked.use({ renderer: wikiRenderer });
 }
 
+// ---- DOMPurify セットアップ ----
+const PURIFY_CONFIG = {
+  ALLOWED_TAGS: [
+    'h1','h2','h3','h4','h5','h6',
+    'p','br','hr','blockquote','pre','code',
+    'ul','ol','li',
+    'table','thead','tbody','tr','th','td',
+    'a','strong','em','del','s',
+    'div','span','img',
+  ],
+  ALLOWED_ATTR: ['href','title','target','rel','src','alt','width','height','class','style','id'],
+  ALLOW_UNKNOWN_PROTOCOLS: false,
+};
+function sanitize(html) {
+  return (typeof DOMPurify !== 'undefined') ? DOMPurify.sanitize(html, PURIFY_CONFIG) : html;
+}
+
+// ---- HTML エスケープ（テンプレートリテラル用）----
+function esc(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // ---- Wiki Navigation ----
 const wikiCache = {};
 
@@ -37,7 +64,7 @@ async function showWiki(article, btn) {
       return;
     }
   }
-  display.innerHTML = marked.parse(wikiCache[article]);
+  display.innerHTML = sanitize(marked.parse(wikiCache[article]));
 }
 
 // ---- Wiki Search ----
@@ -72,15 +99,15 @@ async function initNews() {
   }
 
   list.innerHTML = newsItems.map(item => `
-    <div class="news-card" onclick="toggleNews(this)" data-id="${item.id}" data-year="${item.date.slice(0, 4)}" data-category="${item.category}">
+    <div class="news-card" onclick="toggleNews(this)" data-id="${esc(item.id)}" data-year="${esc(item.date.slice(0, 4))}" data-category="${esc(item.category)}">
       <div class="news-card-header">
         <div style="flex:1">
           <div class="news-meta">
-            <span class="news-date">${item.date}</span>
-            <span class="pill pill-${item.categoryColor}">${item.category}</span>
+            <span class="news-date">${esc(item.date)}</span>
+            <span class="pill pill-${esc(item.categoryColor)}">${esc(item.category)}</span>
           </div>
-          <div class="news-title">${item.title}</div>
-          <div class="news-summary">${item.summary}</div>
+          <div class="news-title">${esc(item.title)}</div>
+          <div class="news-summary">${esc(item.summary)}</div>
         </div>
         <span class="news-chevron">▼</span>
       </div>
@@ -98,10 +125,10 @@ function renderNewsFilters() {
   const cats  = ['all', ...new Set(newsItems.map(i => i.category))];
 
   document.getElementById('news-year-filters').innerHTML =
-    years.map(y => `<button class="news-filter-btn${y === 'all' ? ' active' : ''}" onclick="setNewsFilter('year','${y}',this)">${y === 'all' ? 'すべて' : y + '年'}</button>`).join('');
+    years.map(y => `<button class="news-filter-btn${y === 'all' ? ' active' : ''}" onclick="setNewsFilter('year','${esc(y)}',this)">${y === 'all' ? 'すべて' : esc(y) + '年'}</button>`).join('');
 
   document.getElementById('news-cat-filters').innerHTML =
-    cats.map(c => `<button class="news-filter-btn${c === 'all' ? ' active' : ''}" onclick="setNewsFilter('category','${c}',this)">${c === 'all' ? 'すべて' : c}</button>`).join('');
+    cats.map(c => `<button class="news-filter-btn${c === 'all' ? ' active' : ''}" onclick="setNewsFilter('category','${esc(c)}',this)">${c === 'all' ? 'すべて' : esc(c)}</button>`).join('');
 }
 
 // ---- News フィルター切り替え ----
@@ -138,11 +165,17 @@ async function loadNewsBody(card) {
   const body = card.querySelector('.news-body');
   if (!id || body.dataset.loaded) return;
 
+  if (!/^[a-zA-Z0-9\-]+$/.test(id)) {
+    body.innerHTML = '<p style="color:var(--red)">無効な記事IDです。</p>';
+    body.dataset.loaded = '1';
+    return;
+  }
+
   try {
     const res = await fetch('news/' + id + '.md');
     if (!res.ok) throw new Error('404');
     const md = await res.text();
-    body.innerHTML = marked.parse(md);
+    body.innerHTML = sanitize(marked.parse(md));
     body.dataset.loaded = '1';
   } catch {
     body.innerHTML = '<p style="color:var(--red)">本文を読み込めませんでした。</p>';

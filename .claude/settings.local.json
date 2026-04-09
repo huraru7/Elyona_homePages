@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"fetch\\\\|XMLHttpRequest\\\\|eval\\\\|innerHTML\\\\|insertAdjacentHTML\\\\|dangerouslySetInnerHTML\\\\|script\\\\|onclick\\\\|oninput\\\\|onchange\" /Users/huraru/MyProgramData/Elyona_sight/*.html)",
+      "Bash(grep -E \"location\\\\.href|window\\\\.location|document\\\\.location\" /Users/huraru/MyProgramData/Elyona_sight/*.html)"
+    ]
+  }
+}
